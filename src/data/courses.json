@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "title": "Business accounting and taxation fundamental",
+    "description": "Master the fundamentals of business accounting and taxation with this comprehensive course.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "category": "Design",
+    "instructor": {
+      "id": "1",
+      "name": "Matthew taylor",
+      "avatar": "/images/instructors/matthew.jpg"
+    },
+    "price": 60,
+    "enrolledStudents": 10,
+    "lessons": 10,
+    "language": "English",
+    "duration": "3 weeks",
+    "rating": 4.5,
+    "reviews": 20,
+    "image": "/images/courses/business-accounting.jpg",
+    "videoThumbnail": "/images/courses/business-accounting-video.jpg",
+    "tags": ["Accounting", "Business", "Taxation"],
+    "featured": true,
+    "whatYoullLearn": [
+      "Ready to begin working on real-world data modeling projects",
+      "Expanded responsibilities as part of an existing role",
+      "Manage your time so you'll get more done in less time",
+      "Have sharp leadership skills to manage your team",
+      "Cut expenses without sacrificing quality"
+    ],
+    "certification": {
+      "available": true,
+      "description": "Upon completion, you'll receive a certificate that validates your expertise in business accounting and taxation fundamentals."
+    }
+  },
+  {
+    "id": "2",
+    "title": "Finance fundamentals of management and planning",
+    "description": "Learn the core principles of financial management and strategic planning.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "category": "Finance",
+    "instructor": {
+      "id": "2",
+      "name": "Locked academy",
+      "avatar": "/images/instructors/locked.jpg"
+    },
+    "price": 85,
+    "enrolledStudents": 30,
+    "lessons": 22,
+    "language": "English",
+    "duration": "4 weeks",
+    "rating": 4.8,
+    "reviews": 39,
+    "image": "/images/courses/finance-fundamentals.jpg",
+    "tags": ["Finance", "Management", "Planning"],
+    "featured": false
+  },
+  {
+    "id": "3",
+    "title": "Introduction to application design and development",
+    "description": "Get started with modern application design and development practices.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "category": "Design",
+    "instructor": {
+      "id": "3",
+      "name": "Norman miller",
+      "avatar": "/images/instructors/norman.jpg"
+    },
+    "price": 80,
+    "enrolledStudents": 55,
+    "lessons": 15,
+    "language": "English",
+    "duration": "5 weeks",
+    "rating": 4.7,
+    "reviews": 35,
+    "image": "/images/courses/app-design.jpg",
+    "tags": ["Design", "Development", "Applications"],
+    "featured": false
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Herman miller",
+    "role": "Behavioral scientist",
+    "company": "Tech Corp",
+    "avatar": "/images/testimonials/herman.jpg",
+    "rating": 5,
+    "comment": "Course materials were good, the mentoring approach was good and working with other people via the internet was good.",
+    "courseId": "1"
+  },
+  {
+    "id": "2",
+    "name": "Sarah Johnson",
+    "role": "Business Analyst",
+    "company": "Finance Inc",
+    "avatar": "/images/testimonials/sarah.jpg",
+    "rating": 5,
+    "comment": "Excellent course! The instructor explained complex concepts in a way that was easy to understand. Highly recommended!",
+    "courseId": "1"
+  },
+  {
+    "id": "3",
+    "name": "Michael Chen",
+    "role": "Software Developer",
+    "company": "Dev Solutions",
+    "avatar": "/images/testimonials/michael.jpg",
+    "rating": 4,
+    "comment": "Great content and practical examples. The course helped me improve my skills significantly.",
+    "courseId": "3"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "name": "Matthew taylor",
+    "title": "Senior Business Analyst",
+    "bio": "Matthew is an experienced business analyst with over 10 years of experience in accounting and taxation. He has helped hundreds of students master the fundamentals of business finance.",
+    "avatar": "/images/instructors/matthew.jpg",
+    "rating": 4.8,
+    "reviews": 120,
+    "courses": 5,
+    "social": {
+      "linkedin": "https://linkedin.com/in/matthew-taylor",
+      "twitter": "https://twitter.com/matthew-taylor"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Locked academy",
+    "title": "Finance Expert",
+    "bio": "Locked academy is a team of finance professionals dedicated to teaching financial management and planning to students worldwide.",
+    "avatar": "/images/instructors/locked.jpg",
+    "rating": 4.9,
+    "reviews": 200,
+    "courses": 8,
+    "social": {
+      "website": "https://lockedacademy.com"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Norman miller",
+    "title": "UI/UX Designer & Developer",
+    "bio": "Norman is a creative designer and developer with expertise in modern application design. He combines design thinking with technical skills to create amazing user experiences.",
+    "avatar": "/images/instructors/norman.jpg",
+    "rating": 4.7,
+    "reviews": 150,
+    "courses": 6,
+    "social": {
+      "linkedin": "https://linkedin.com/in/norman-miller",
+      "twitter": "https://twitter.com/norman-miller"
+    }
+  }
+]

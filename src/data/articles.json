@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "How to evaluate the effective of training programs",
+    "excerpt": "Learn how to measure and evaluate the effectiveness of your training programs to ensure maximum ROI.",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "author": {
+      "id": "1",
+      "name": "Andy glamor",
+      "avatar": "/images/authors/andy.jpg"
+    },
+    "image": "/images/articles/training-programs.jpg",
+    "publishedAt": "2024-01-15",
+    "likes": 46,
+    "category": "Education",
+    "tags": ["Training", "Evaluation", "ROI"]
+  },
+  {
+    "id": "2",
+    "title": "Experience the breathtaking views and perspectives",
+    "excerpt": "Discover new perspectives on learning and professional development in the modern world.",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "author": {
+      "id": "2",
+      "name": "Den williamson",
+      "avatar": "/images/authors/den.jpg"
+    },
+    "image": "/images/articles/perspectives.jpg",
+    "publishedAt": "2024-01-10",
+    "likes": 36,
+    "category": "Lifestyle",
+    "tags": ["Perspectives", "Learning", "Development"]
+  },
+  {
+    "id": "3",
+    "title": "Build up healthy habits and strong peaceful life",
+    "excerpt": "Learn how to develop healthy habits that lead to a more peaceful and productive life.",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "author": {
+      "id": "3",
+      "name": "Jones robbert",
+      "avatar": "/images/authors/jones.jpg"
+    },
+    "image": "/images/articles/healthy-habits.jpg",
+    "publishedAt": "2024-01-05",
+    "likes": 54,
+    "category": "Wellness",
+    "tags": ["Habits", "Wellness", "Productivity"]
+  }
+]
