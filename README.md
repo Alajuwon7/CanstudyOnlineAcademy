@@ -33,8 +33,8 @@ A modern, full-stack e-learning platform built with Next.js 14, React 18, TypeSc
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd canstudy-online
+git clone https://github.com/Alajuwon7/CanstudyOnlineAcademy.git
+cd CanstudyOnlineAcademy
 ```
 
 2. Install dependencies:
@@ -86,7 +86,7 @@ canstudy-online/
 
 The project uses a custom design system with:
 
-- **Colors:** Primary (teal-dark), Accent (yellow-lime), Secondary (blue-dark)
+- **Colors:** Primary (teal-dark), Accent (orange), Secondary (blue-dark)
 - **Typography:** Space Grotesk for headings, Inter for body text
 - **Spacing:** 15px base increments
 - **Shadows:** Card and button shadows
