@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Section } from '@/components/layout/Section';
 import { CourseDetails } from '@/components/course/CourseDetails';
 import { CourseSidebar } from '@/components/course/CourseSidebar';
-import { Rating } from '@/components/ui/Rating';
 import { CourseGrid } from '@/components/course/CourseGrid';
 import { getCourseById, getCourses } from '@/lib/api';
 import { Course } from '@/types/course';
@@ -106,7 +105,7 @@ export default async function CourseDetailPage({
       {/* Course Info Bar */}
       <div className="bg-white border-b border-gray-200 my-2">
         <div className="max-w-container mx-auto px-4 md:px-lg lg:px-xl">
-          <div className="relative py-4 md:py-5 flex items-center justify-center min-h-[60px]">
+          <div className="relative py-4 md:py-5 flex flex-col md:flex-row items-center justify-center min-h-[60px]">
             {/* Desktop Layout */}
             <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
               {/* Instructor */}
@@ -142,20 +141,13 @@ export default async function CourseDetailPage({
               <div className="flex items-center">
                 <span className="text-body-md font-semibold text-text-primary whitespace-nowrap">
                   Categories:
-                  <span className="font-normal text-text-secondary"> {course.category}</span>
-                </span>
-              </div>
-
-              {/* Divider */}
-              <div className="w-px h-[20px] bg-gray-200" />
-
-              {/* Enrolled */}
-              <div className="flex items-center">
-                <span className="text-body-md font-semibold text-text-primary whitespace-nowrap">
-                  Enrolled:
                   <span className="font-normal text-text-secondary">
                     {' '}
-                    {course.enrolledStudents} students
+                    {course.id === '1'
+                      ? 'Languages & Global Communication'
+                      : course.id === '2'
+                      ? 'Business & Professional Development'
+                      : course.category}
                   </span>
                 </span>
               </div>
@@ -163,14 +155,12 @@ export default async function CourseDetailPage({
               {/* Divider */}
               <div className="w-px h-[20px] bg-gray-200" />
 
-              {/* Rating */}
+              {/* Skill Level */}
               <div className="flex items-center">
-                <Rating
-                  value={course.rating}
-                  showCount
-                  reviewCount={course.reviews}
-                  size="sm"
-                />
+                <span className="text-body-md font-semibold text-text-primary whitespace-nowrap">
+                  Skill level:
+                  <span className="font-normal text-text-secondary"> Beginner to Intermediate</span>
+                </span>
               </div>
             </div>
 
@@ -203,24 +193,22 @@ export default async function CourseDetailPage({
               <div className="flex items-center gap-3">
                 <span className="text-body-sm font-semibold text-text-primary">
                   Category:
-                  <span className="font-normal text-text-secondary"> {course.category}</span>
+                  <span className="font-normal text-text-secondary">
+                    {' '}
+                    {course.id === '1'
+                      ? 'Languages & Global Communication'
+                      : course.id === '2'
+                      ? 'Business & Professional Development'
+                      : course.category}
+                  </span>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-body-sm font-semibold text-text-primary">
-                  Enrolled:
-                  <span className="font-normal text-text-secondary">
-                    {' '}
-                    {course.enrolledStudents}
-                  </span>
+                  Skill level:
+                  <span className="font-normal text-text-secondary"> Beginner to Intermediate</span>
                 </span>
               </div>
-              <Rating
-                value={course.rating}
-                showCount
-                reviewCount={course.reviews}
-                size="sm"
-              />
             </div>
           </div>
         </div>

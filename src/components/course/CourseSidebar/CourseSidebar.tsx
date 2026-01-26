@@ -4,6 +4,7 @@ import { Course } from '@/types/course';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { formatPrice } from '@/lib/utils';
+import { SOCIAL_LINKS } from '@/lib/constants';
 import {
   FiClock,
   FiUsers,
@@ -13,13 +14,15 @@ import {
   FiPlay,
   FiArrowRight,
   FiCalendar,
+  FiVideo,
+  FiFlag,
+  FiCreditCard,
 } from 'react-icons/fi';
 import {
   FaFacebook,
-  FaTwitter,
-  FaPinterest,
+  FaTiktok,
+  FaInstagram,
   FaLinkedin,
-  FaBehance,
 } from 'react-icons/fa';
 
 export interface CourseSidebarProps {
@@ -53,8 +56,23 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
         <div className="p-[35px] flex flex-col gap-5">
           {/* Course Details List */}
           <div className="flex flex-col">
-            {/* Duration */}
+            {/* Start Date */}
             <div className="border-b border-gray-200 pb-4 flex items-center justify-between">
+              <div className="flex items-center">
+                <div className="pr-[10px] flex items-center justify-center">
+                  <FiFlag className="text-primary text-[20px]" />
+                </div>
+                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                  Start
+                </span>
+              </div>
+              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+                {course.id === '1' ? 'Feb. 9th, 2026' : course.id === '2' ? 'March 12th, 2026' : 'Feb. 9th, 2026'}
+              </span>
+            </div>
+
+            {/* Duration */}
+            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
               <div className="flex items-center">
                 <div className="pr-[10px] flex items-center justify-center">
                   <FiClock className="text-primary text-[20px]" />
@@ -68,18 +86,18 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               </span>
             </div>
 
-            {/* Enrolled */}
+            {/* Format */}
             <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
               <div className="flex items-center">
                 <div className="pr-[10px] flex items-center justify-center">
-                  <FiUsers className="text-primary text-[20px]" />
+                  <FiVideo className="text-primary text-[20px]" />
                 </div>
                 <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
-                  Enrolled
+                  Format
                 </span>
               </div>
               <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
-                {course.enrolledStudents} students
+                Live - Video
               </span>
             </div>
 
@@ -112,37 +130,6 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 {course.lessons}
               </span>
             </div>
-
-            {/* Start Date (for course id "2") or Certificate (for other courses) */}
-            {course.id === '2' ? (
-              <div className="pb-[15px] pt-[10px] flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="pr-[10px] flex items-center justify-center">
-                    <FiCalendar className="text-primary text-[20px]" />
-                  </div>
-                  <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
-                    Start Date
-                  </span>
-                </div>
-                <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
-                  March 12th
-                </span>
-              </div>
-            ) : (
-              <div className="pb-[15px] pt-[10px] flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="pr-[10px] flex items-center justify-center">
-                    <FiAward className="text-primary text-[20px]" />
-                  </div>
-                  <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
-                    Certificate
-                  </span>
-                </div>
-                <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
-                  {course.certification?.available !== false ? 'Yes' : 'No'}
-                </span>
-              </div>
-            )}
           </div>
 
           {/* Price Badge */}
@@ -174,34 +161,42 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
           </a>
 
           {/* Social Sharing */}
-          <div className="flex items-center gap-[10.8px] pl-[34.65px] pr-[34.66px]">
+          <div className="flex items-center gap-4 justify-center">
             <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center text-text-primary hover:text-accent transition-colors"
-              aria-label="Share on Facebook"
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              aria-label="Visit our Facebook page"
             >
-              <FaFacebook className="text-[18px]" />
+              <FaFacebook />
             </a>
             <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center text-text-primary hover:text-accent transition-colors"
-              aria-label="Share on Pinterest"
+              href={SOCIAL_LINKS.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              aria-label="Visit our TikTok page"
             >
-              <FaPinterest className="text-[18px]" />
+              <FaTiktok />
             </a>
             <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center text-text-primary hover:text-accent transition-colors"
-              aria-label="Share on Twitter"
+              href={SOCIAL_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              aria-label="Visit our Instagram page"
             >
-              <FaTwitter className="text-[18px]" />
+              <FaInstagram />
             </a>
             <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center text-text-primary hover:text-accent transition-colors"
-              aria-label="Share on Behance"
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              aria-label="Visit our LinkedIn page"
             >
-              <FaBehance className="text-[18px]" />
+              <FaLinkedin />
             </a>
           </div>
         </div>

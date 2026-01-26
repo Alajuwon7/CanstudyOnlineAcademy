@@ -44,15 +44,31 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             </h3>
             <ul className="space-y-2">
               {course.whatYoullLearn && course.whatYoullLearn.length > 0 ? (
-                course.whatYoullLearn.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]"
-                  >
-                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                    <span>{item}</span>
-                  </li>
-                ))
+                course.whatYoullLearn.map((item, index) => {
+                  const colonIndex = item.indexOf(':');
+                  const hasColon = colonIndex !== -1;
+                  const beforeColon = hasColon ? item.substring(0, colonIndex + 1) : '';
+                  const afterColon = hasColon ? item.substring(colonIndex + 1) : item;
+                  
+                  return (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]"
+                    >
+                      <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                      <span>
+                        {hasColon ? (
+                          <>
+                            <span className="font-semibold">{beforeColon}</span>
+                            {afterColon}
+                          </>
+                        ) : (
+                          item
+                        )}
+                      </span>
+                    </li>
+                  );
+                })
               ) : (
                 <>
                   <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
@@ -122,6 +138,15 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                 </span>
               </li>
             </ul>
+          </div>
+
+          <div className="pt-10 pb-6">
+            <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+              Important Note
+            </h3>
+            <p className="text-body-md text-gray-800 leading-[30px]">
+              This professional development program is open to participants worldwide. The training does not provide immigration or legal advice. All study permit and visa discussions are contextual, based on publicly available government information.
+            </p>
           </div>
         </div>
       ),
@@ -200,8 +225,56 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
       label: 'Instructor',
       content: (
         <div className="pt-6">
-          <p className="text-body-md text-text-secondary">
-            Instructor information will be displayed here.
+          {course.id === '2' ? (
+            <div className="space-y-4">
+              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                Meet Your Instructor: Mrs. Monique Myers
+              </h3>
+              <p className="text-body-md text-gray-800 leading-[30px] font-semibold">
+                Founder & CEO, Canstudy Consulting Ltd. | Myers Immigration Services Inc.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px] font-semibold">
+                International Education Consultant | RCIC #R731184
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the Global Education Recruiter Training Program.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                A Caribbean native who began her own international journey as a student in Toronto, Monique transformed her academic foundation in Criminology and Political Science into a purpose-driven career in international education and immigration consulting.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                After earning permanent residency in Canada, she further specialized in Canadian Immigration Law and Policy, becoming a Regulated Canadian Immigration Consultant (RCIC). Through her companies — Canstudy Consulting and Myers Immigration Services — she has trained and advised hundreds of students, consultants, and partner institutions worldwide.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                Today, Monique is recognized for her practical, ethics-driven approach to education recruitment and her commitment to preparing the next generation of professionals to thrive in the global education industry.
+              </p>
+            </div>
+          ) : (
+            <p className="text-body-md text-text-secondary">
+              Instructor information will be displayed here.
+            </p>
+          )}
+        </div>
+      ),
+    },
+    {
+      id: 'payment',
+      label: 'Payment Options',
+      content: (
+        <div className="pt-6">
+          <p className="text-body-md text-gray-800 leading-[30px] mb-4">
+            Please note that we accept Klarna, Affirm, AfterPay, E-transfer, and PayPal.
+          </p>
+          <p className="text-body-md text-gray-800 leading-[30px]">
+            If you would like to pay using one of these payment methods, Please contact our office at{' '}
+            <a href="mailto:info@canstudyconsult.com" className="text-accent hover:underline">
+              info@canstudyconsult.com
+            </a>{' '}
+            or{' '}
+            <a href="tel:6478951747" className="text-accent hover:underline">
+              647-895-1747
+            </a>
+            .
           </p>
         </div>
       ),

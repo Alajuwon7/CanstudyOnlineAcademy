@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { FiPhone, FiMail } from 'react-icons/fi';
 import {
   FaFacebook,
-  FaTwitter,
+  FaTiktok,
   FaInstagram,
   FaLinkedin,
-  FaBehance,
+  FaWhatsapp,
 } from 'react-icons/fa';
 import { Container } from '../Container';
 import { Input } from '@/components/ui/Input';
@@ -74,12 +74,12 @@ export const Footer: React.FC = () => {
                 <FaFacebook />
               </a>
               <a
-                href={SOCIAL_LINKS.twitter}
+                href={SOCIAL_LINKS.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-colors"
               >
-                <FaTwitter />
+                <FaTiktok />
               </a>
               <a
                 href={SOCIAL_LINKS.instagram}
@@ -90,12 +90,12 @@ export const Footer: React.FC = () => {
                 <FaInstagram />
               </a>
               <a
-                href={SOCIAL_LINKS.behance}
+                href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-colors"
               >
-                <FaBehance />
+                <FaLinkedin />
               </a>
             </div>
           </div>
@@ -144,13 +144,25 @@ export const Footer: React.FC = () => {
             <h3 className="text-heading-2 font-semibold mb-4">Need help?</h3>
             <div className="space-y-3">
               <div>
-                <p className="text-body-sm text-white/60 mb-1">Call us directly?</p>
+                <p className="text-body-sm text-white/60 mb-1">WhatsApp</p>
                 <a
-                  href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
+                  href="https://wa.me/16478951747"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-body-md text-accent font-semibold flex items-center gap-2"
+                >
+                  <FaWhatsapp />
+                  647-895-1747
+                </a>
+              </div>
+              <div>
+                <p className="text-body-sm text-white/60 mb-1">Toll Free</p>
+                <a
+                  href="tel:+18664763433"
                   className="text-body-md text-accent font-semibold flex items-center gap-2"
                 >
                   <FiPhone />
-                  {CONTACT_INFO.phone}
+                  +1-866-476-3433
                 </a>
               </div>
               <div>

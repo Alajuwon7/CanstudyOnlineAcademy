@@ -16,15 +16,14 @@ export const COURSE_CATEGORIES = [
 ];
 
 export const SOCIAL_LINKS = {
-  facebook: 'https://facebook.com',
-  twitter: 'https://twitter.com',
-  instagram: 'https://instagram.com',
-  linkedin: 'https://linkedin.com',
-  behance: 'https://behance.net',
+  facebook: 'https://www.facebook.com/canstudyconsulting',
+  tiktok: 'https://www.tiktok.com/@canstudy_consulting',
+  instagram: 'https://www.instagram.com/canstudyconsult',
+  linkedin: 'https://www.linkedin.com/company/canstudy-consulting/',
 };
 
 export const CONTACT_INFO = {
   phone: '+1 800 202 000',
-  email: 'help@domain.com',
+  email: 'info@canstudyconsult.com',
   address: '123 Education Street, Learning City, LC 12345',
 };

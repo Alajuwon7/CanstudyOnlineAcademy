@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { FiArrowRight, FiPhone } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 
 export interface AdmissionBannerProps {
   title?: string;
@@ -11,7 +11,7 @@ export interface AdmissionBannerProps {
 }
 
 export const AdmissionBanner: React.FC<AdmissionBannerProps> = ({
-  title = 'Admission is open for the next year batch',
+  title = 'New cohorts and courses every quarter. Stay updated!',
   buttonText = 'Get started now',
   phoneNumber = '+1 234 567 8910',
   backgroundImage,
@@ -62,19 +62,6 @@ export const AdmissionBanner: React.FC<AdmissionBannerProps> = ({
                 </div>
               </div>
             </button>
-
-            {/* Phone Number */}
-            <div className="flex items-center gap-2 h-[23px] relative">
-              <div className="flex items-center justify-center">
-                <FiPhone className="text-black text-base md:text-[19px]" />
-              </div>
-              <a 
-                href={`tel:${phoneNumber.replace(/\s/g, '')}`}
-                className="text-body-md md:text-body-lg font-semibold text-black tracking-[-0.3px] md:tracking-[-0.5px] leading-[24px] md:leading-[30px] whitespace-nowrap"
-              >
-                {phoneNumber}
-              </a>
-            </div>
           </div>
         </div>
       </div>

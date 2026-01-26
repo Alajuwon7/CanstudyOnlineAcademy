@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { AdmissionBanner } from '@/components/home/AdmissionBanner';
 import '@/styles/design-tokens.css';
 import './globals.css';
 
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="font-secondary antialiased">
         <Header />
         <main className="min-h-screen overflow-x-hidden">{children}</main>
+        <AdmissionBanner />
         <Footer />
       </body>
     </html>
