@@ -20,7 +20,7 @@ export default function ContactPage() {
         />
       </section>
 
-      <Section padding="xl" background="white" className="!py-[90px]">
+      <Section padding="xl" background="white" className="!py-[70px]">
       <div className="max-w-4xl mx-auto">
         {/* Top Section with Label, Heading, and Intro Text */}
         <div className="mb-12">

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FiBriefcase, FiArrowRight } from 'react-icons/fi';
 
@@ -53,57 +52,9 @@ export const PremiumLearning: React.FC = () => {
       }} />
       <section className="relative bg-white overflow-hidden">
       <div className="max-w-container mx-auto px-4 md:px-lg lg:px-xl py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
-          {/* Left Column - Image with modern design */}
-          <div className="relative order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-[500px] aspect-square">
-              {/* Gradient background */}
-              <div
-                className="absolute inset-0 rounded-3xl"
-                style={{
-                  background: 'linear-gradient(135deg, #c5d32c 0%, #0a2d5a 100%)',
-                  opacity: 0.1,
-                }}
-                aria-hidden
-              />
-              {/* Decorative border */}
-              <div
-                className="absolute inset-0 rounded-3xl border-4"
-                style={{
-                  borderColor: '#c5d32c',
-                  opacity: 0.3,
-                }}
-                aria-hidden
-              />
-              {/* Central image */}
-              <div className="relative z-10 w-full h-full flex items-center justify-center p-8">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="https://res.cloudinary.com/kingaat7/image/upload/v1747843309/launchlabbgimage_ijdyxz.png"
-                    alt="Student with book - Premium learning experience"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 70vw, 400px"
-                    priority={false}
-                  />
-                </div>
-              </div>
-              {/* Decorative corner accent */}
-              <div
-                className="absolute -top-4 -right-4 w-24 h-24 rounded-full opacity-20 hidden md:block"
-                style={{ backgroundColor: '#c5d32c' }}
-                aria-hidden
-              />
-              <div
-                className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full opacity-15 hidden md:block"
-                style={{ backgroundColor: '#0a2d5a' }}
-                aria-hidden
-              />
-            </div>
-          </div>
-
-          {/* Right Column - Text content */}
-          <div className="order-1 lg:order-2 space-y-6 md:space-y-8">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 xl:gap-16 items-center">
+          {/* Text content */}
+          <div className="space-y-6 md:space-y-8">
             {/* Premium learning experience badge */}
             <div className="flex items-center gap-2 text-text-secondary">
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10 text-accent">
