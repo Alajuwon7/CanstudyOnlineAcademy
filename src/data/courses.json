@@ -1,32 +1,32 @@
 [
   {
     "id": "1",
-    "title": "Business accounting and taxation fundamental",
+    "title": "Mastering French as a Second Language",
     "description": "Master the fundamentals of business accounting and taxation with this comprehensive course.",
     "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "category": "Design",
+    "category": "Languages",
     "instructor": {
       "id": "1",
-      "name": "Matthew taylor",
-      "avatar": "/images/instructors/matthew.jpg"
+      "name": "Cherice Parsotan",
+      "avatar": "https://res.cloudinary.com/kingaat7/image/upload/v1769392103/CPInstructImage_pb5byj.png"
     },
-    "price": 60,
+    "price": 2000,
     "enrolledStudents": 10,
     "lessons": 10,
     "language": "English",
-    "duration": "3 weeks",
+    "duration": "35 Weeks",
     "rating": 4.5,
     "reviews": 20,
-    "image": "/images/courses/business-accounting.jpg",
-    "videoThumbnail": "/images/courses/business-accounting-video.jpg",
+    "image": "/images/COA2.png",
+    "videoThumbnail": "/images/COA3.png",
     "tags": ["Accounting", "Business", "Taxation"],
     "featured": true,
     "whatYoullLearn": [
-      "Ready to begin working on real-world data modeling projects",
-      "Expanded responsibilities as part of an existing role",
-      "Manage your time so you'll get more done in less time",
-      "Have sharp leadership skills to manage your team",
-      "Cut expenses without sacrificing quality"
+      "Foundational Fluency and Pronunciation",
+      "Everyday Conversational Skills",
+      "Storytelling and Past Tense Mastery",
+      "Advanced Grammar for Real Conversations",
+      "Cultural and Communicative Confidence"
     ],
     "certification": {
       "available": true,
@@ -35,25 +35,32 @@
   },
   {
     "id": "2",
-    "title": "Finance fundamentals of management and planning",
-    "description": "Learn the core principles of financial management and strategic planning.",
-    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "category": "Finance",
+    "title": "Global Education Recruiter Training Program",
+    "description": "Master the skills needed to become a successful education recruiter and help students achieve their academic goals globally.",
+    "fullDescription": "This comprehensive training program equips you with the knowledge and skills to excel as an education recruiter. Learn how to guide students through the application process, understand international education systems, and build successful recruitment strategies. The program runs from March 12 – May 7, 2026, with live, instructor-led online training sessions and access to session recordings for flexible learning.",
+    "category": "Business",
     "instructor": {
       "id": "2",
-      "name": "Locked academy",
-      "avatar": "/images/instructors/locked.jpg"
+      "name": "Monique Myers",
+      "avatar": "https://res.cloudinary.com/kingaat7/image/upload/v1769404443/MMInstructImage_orfcbz.png"
     },
-    "price": 85,
-    "enrolledStudents": 30,
-    "lessons": 22,
+    "price": 1200,
+    "enrolledStudents": 0,
+    "lessons": 16,
     "language": "English",
-    "duration": "4 weeks",
-    "rating": 4.8,
-    "reviews": 39,
-    "image": "/images/courses/finance-fundamentals.jpg",
-    "tags": ["Finance", "Management", "Planning"],
-    "featured": false
+    "duration": "8 Weeks",
+    "rating": 0,
+    "reviews": 0,
+    "image": "/images/COA3.png",
+    "tags": ["Recruitment", "Education", "Business", "Training"],
+    "featured": true,
+    "whatYoullLearn": [
+      "The Global Education Recruitment Ecosystem: Understand how the international student recruitment industry operates across high schools, colleges, and universities.",
+      "Ethical Recruitment Practices: Learn how to ethically guide and support international students from inquiry to enrollment.",
+      "Admissions & Systems Knowledge: Gain insight into admission cycles, program types, and institution requirements worldwide.",
+      "Institutional Partnership Building: Learn how to secure contracts and collaborations with educational institutions across multiple countries.",
+      "Legal & Compliance Awareness: Understand how to reference study permit and visa information responsibly without offering immigration advice."
+    ]
   },
   {
     "id": "3",
@@ -73,7 +80,7 @@
     "duration": "5 weeks",
     "rating": 4.7,
     "reviews": 35,
-    "image": "/images/courses/app-design.jpg",
+    "image": "/images/COA4.png",
     "tags": ["Design", "Development", "Applications"],
     "featured": false
   }

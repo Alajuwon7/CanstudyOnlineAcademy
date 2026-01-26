@@ -93,79 +93,85 @@ export default async function CourseDetailPage({
               <h1 className="text-[32px] md:text-[48px] lg:text-[60px] font-primary font-bold leading-[1.2] tracking-[-2px] mb-0">
                 {course.title}
               </h1>
+              {course.id === '1' && (
+                <h2 className="text-[20px] md:text-[24px] lg:text-[28px] font-primary font-semibold text-white/90 mt-2 tracking-[-0.5px]">
+                  Beginner to Intermediate
+                </h2>
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {/* Course Info Bar */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white border-b border-gray-200 my-2">
         <div className="max-w-container mx-auto px-4 md:px-lg lg:px-xl">
-          <div className="relative h-[60px] md:h-[60px] flex items-center justify-center">
-            {/* Instructor */}
-            <div className="absolute left-0 md:left-1/2 md:translate-x-[-346px] flex items-center gap-3">
-              <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden flex-shrink-0">
-                {course.instructor.avatar ? (
-                  <Image
-                    src={course.instructor.avatar}
-                    alt={course.instructor.name}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-primary text-xl font-bold">
-                      {course.instructor.name.charAt(0)}
-                    </span>
-                  </div>
-                )}
-              </div>
-              <div>
-                <span className="text-body-md font-semibold text-text-primary">
+          <div className="relative py-4 md:py-5 flex items-center justify-center min-h-[60px]">
+            {/* Desktop Layout */}
+            <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
+              {/* Instructor */}
+              <div className="flex items-center gap-3">
+                <div className="relative w-[60px] h-[60px] min-w-[60px] min-h-[60px] rounded-full overflow-hidden flex-shrink-0">
+                  {course.instructor.avatar ? (
+                    <Image
+                      src={course.instructor.avatar}
+                      alt={course.instructor.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <span className="text-primary text-xl font-bold">
+                        {course.instructor.name.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <span className="text-body-md font-semibold text-text-primary whitespace-nowrap">
                   Instructor:{' '}
                   <span className="font-normal text-text-secondary">
                     {course.instructor.name}
                   </span>
                 </span>
               </div>
-            </div>
 
-            {/* Divider */}
-            <div className="hidden md:block absolute left-1/2 translate-x-[-174px] w-px h-[20px] bg-gray-200" />
+              {/* Divider */}
+              <div className="w-px h-[20px] bg-gray-200" />
 
-            {/* Categories */}
-            <div className="absolute left-1/2 translate-x-[-66px] hidden md:block">
-              <span className="text-body-md font-semibold text-text-primary text-center">
-                Categories:
-                <span className="font-normal text-text-secondary"> {course.category}</span>
-              </span>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden md:block absolute left-1/2 translate-x-[43px] w-px h-[20px] bg-gray-200" />
-
-            {/* Enrolled */}
-            <div className="absolute left-1/2 translate-x-[159px] hidden md:block">
-              <span className="text-body-md font-semibold text-text-primary text-center">
-                Enrolled:
-                <span className="font-normal text-text-secondary">
-                  {' '}
-                  {course.enrolledStudents} students
+              {/* Categories */}
+              <div className="flex items-center">
+                <span className="text-body-md font-semibold text-text-primary whitespace-nowrap">
+                  Categories:
+                  <span className="font-normal text-text-secondary"> {course.category}</span>
                 </span>
-              </span>
-            </div>
+              </div>
 
-            {/* Divider */}
-            <div className="hidden md:block absolute left-1/2 translate-x-[273px] w-px h-[20px] bg-gray-200" />
+              {/* Divider */}
+              <div className="w-px h-[20px] bg-gray-200" />
 
-            {/* Rating */}
-            <div className="absolute left-1/2 translate-x-[297px] hidden md:flex items-center gap-2">
-              <Rating
-                value={course.rating}
-                showCount
-                reviewCount={course.reviews}
-                size="sm"
-              />
+              {/* Enrolled */}
+              <div className="flex items-center">
+                <span className="text-body-md font-semibold text-text-primary whitespace-nowrap">
+                  Enrolled:
+                  <span className="font-normal text-text-secondary">
+                    {' '}
+                    {course.enrolledStudents} students
+                  </span>
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-[20px] bg-gray-200" />
+
+              {/* Rating */}
+              <div className="flex items-center">
+                <Rating
+                  value={course.rating}
+                  showCount
+                  reviewCount={course.reviews}
+                  size="sm"
+                />
+              </div>
             </div>
 
             {/* Mobile Layout */}

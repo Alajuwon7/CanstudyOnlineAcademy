@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="font-secondary antialiased">
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>

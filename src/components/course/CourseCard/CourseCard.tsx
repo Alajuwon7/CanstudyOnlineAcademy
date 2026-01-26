@@ -5,8 +5,7 @@ import { Course } from '@/types/course';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Rating } from '@/components/ui/Rating';
-import { formatPrice } from '@/lib/utils';
-import { FiBook, FiUsers } from 'react-icons/fi';
+import { FiCalendar } from 'react-icons/fi';
 
 export interface CourseCardProps {
   course: Course;
@@ -26,7 +25,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             />
           </div>
           <div className="absolute top-4 right-4">
-            <Badge variant="price">{formatPrice(course.price)}</Badge>
+            <Badge variant="price">Beginner</Badge>
           </div>
         </div>
         <div className="p-4 md:p-6">
@@ -37,7 +36,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             </span>
           </div>
           <h3 className="text-[18px] md:text-heading-2 font-semibold text-black mb-3 line-clamp-2 group-hover:text-primary transition-colors min-h-[56px]">
-            {course.title}
+            {course.title} {course.id === '1' && <span className="font-normal">(Beginner to Intermediate)</span>}
           </h3>
           <div className="flex items-center justify-between mb-4">
             <Rating
@@ -49,12 +48,8 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           </div>
           <div className="flex flex-wrap items-center gap-3 md:gap-4 text-body-xs md:text-body-sm text-text-secondary">
             <div className="flex items-center gap-2">
-              <FiBook className="w-4 h-4" />
-              <span>{course.lessons} Lessons</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FiUsers className="w-4 h-4" />
-              <span>{course.enrolledStudents} Students</span>
+              <FiCalendar className="w-4 h-4" />
+              <span>35 Weeks</span>
             </div>
           </div>
         </div>

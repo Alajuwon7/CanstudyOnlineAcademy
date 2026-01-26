@@ -12,9 +12,7 @@ export const COURSE_CATEGORIES = [
   { id: 'all', name: 'All', slug: 'all' },
   { id: 'development', name: 'Development', slug: 'development' },
   { id: 'business', name: 'Business', slug: 'business' },
-  { id: 'design', name: 'Design', slug: 'design' },
-  { id: 'marketing', name: 'Marketing', slug: 'marketing' },
-  { id: 'finance', name: 'Finance', slug: 'finance' },
+  { id: 'languages', name: 'Languages', slug: 'languages' },
 ];
 
 export const SOCIAL_LINKS = {

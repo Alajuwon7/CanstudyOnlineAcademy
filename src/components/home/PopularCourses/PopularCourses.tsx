@@ -60,13 +60,6 @@ export const PopularCourses: React.FC = () => {
       </div>
 
       <CourseGrid courses={filteredCourses} />
-
-      <div className="mt-6 md:mt-8 text-center px-4">
-        <p className="text-body-sm md:text-body-md text-text-secondary max-w-2xl mx-auto">
-          We help you find the perfect tutor. It's completely free. Explore all
-          courses.
-        </p>
-      </div>
     </Section>
   );
 };

@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
-import { FiPlay } from 'react-icons/fi';
 
 export const Hero: React.FC = () => {
   return (
@@ -90,21 +90,20 @@ export const Hero: React.FC = () => {
               className="text-center lg:text-left"
             >
               <h1 className="text-[32px] md:text-[48px] lg:text-[60px] font-primary font-bold mb-4 md:mb-6 leading-tight">
-                Best online platform for education.
+                Learn the Skills the World Needs Now.
               </h1>
               <p className="text-body-md md:text-body-lg text-white/80 mb-6 md:mb-8 px-2 md:px-0">
-                Online courses from the world's leading experts.
-                <br />
-                Join 17 million learners today.
+                Future-proof your career with Canstudy Online Academy. Gain in-demand skills, global insights, and mentorship from industry leaders — all from the comfort of home.
               </p>
-              <Button
-                variant="accent"
-                size="lg"
-                className="flex items-center gap-2 mx-auto lg:mx-0 w-fit"
-              >
-                <FiPlay className="text-base md:text-lg" />
-                Get started
-              </Button>
+              <Link href="/courses">
+                <Button
+                  variant="accent"
+                  size="lg"
+                  className="flex items-center gap-2 mx-auto lg:mx-0 w-fit"
+                >
+                  View Courses
+                </Button>
+              </Link>
             </motion.div>
 
             <motion.div

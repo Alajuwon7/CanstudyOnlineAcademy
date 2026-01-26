@@ -12,6 +12,7 @@ import {
   FiAward,
   FiPlay,
   FiArrowRight,
+  FiCalendar,
 } from 'react-icons/fi';
 import {
   FaFacebook,
@@ -112,20 +113,36 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               </span>
             </div>
 
-            {/* Certificate */}
-            <div className="pb-[15px] pt-[10px] flex items-center justify-between">
-              <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiAward className="text-primary text-[20px]" />
+            {/* Start Date (for course id "2") or Certificate (for other courses) */}
+            {course.id === '2' ? (
+              <div className="pb-[15px] pt-[10px] flex items-center justify-between">
+                <div className="flex items-center">
+                  <div className="pr-[10px] flex items-center justify-center">
+                    <FiCalendar className="text-primary text-[20px]" />
+                  </div>
+                  <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                    Start Date
+                  </span>
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
-                  Certificate
+                <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+                  March 12th
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
-                {course.certification?.available !== false ? 'Yes' : 'No'}
-              </span>
-            </div>
+            ) : (
+              <div className="pb-[15px] pt-[10px] flex items-center justify-between">
+                <div className="flex items-center">
+                  <div className="pr-[10px] flex items-center justify-center">
+                    <FiAward className="text-primary text-[20px]" />
+                  </div>
+                  <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                    Certificate
+                  </span>
+                </div>
+                <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+                  {course.certification?.available !== false ? 'Yes' : 'No'}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Price Badge */}
@@ -136,16 +153,25 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
           </div>
 
           {/* Enroll Button */}
-          <button className="bg-accent border-2 border-transparent rounded-full flex items-center justify-center overflow-clip">
+          <a
+            href={
+              course.id === '2'
+                ? 'https://form.jotform.com/canstudy_consult/ger'
+                : 'https://form.jotform.com/canstudy_consult/french'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-accent border-2 border-transparent rounded-full flex items-center justify-center overflow-clip hover:opacity-90 transition-opacity"
+          >
             <div className="flex items-center pb-[15px] pt-[14px] px-[38px] rounded-[inherit]">
               <div className="pr-[6px] pb-[5.5px] pt-[3px]">
-                <FiArrowRight className="text-[17px] text-text-primary scale-y-[-100%]" />
+                <FiArrowRight className="text-[17px] text-white scale-y-[-100%]" />
               </div>
-              <span className="text-[17px] font-semibold text-text-primary leading-[25.5px] text-center">
+              <span className="text-[17px] font-semibold text-white leading-[25.5px] text-center">
                 Enroll now
               </span>
             </div>
-          </button>
+          </a>
 
           {/* Social Sharing */}
           <div className="flex items-center gap-[10.8px] pl-[34.65px] pr-[34.66px]">

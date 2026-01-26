@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { NAVIGATION_ITEMS } from '@/lib/constants';
 import { Container } from '../Container';
-import { Button } from '@/components/ui/Button';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 export const Header: React.FC = () => {
@@ -37,19 +36,17 @@ export const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white shadow-md'
-          : 'bg-primary/95 backdrop-blur-sm'
+          : 'bg-white'
       }`}
     >
       <Container>
-        <nav className="flex items-center justify-between py-3 md:py-4">
-          <Link href="/" className="flex items-center gap-2">
+        <nav className="relative flex items-center justify-between py-3 md:py-4">
+          <Link href="/" className="flex items-center gap-2 z-10">
             <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent flex items-center justify-center">
-              <span className={`font-bold text-lg md:text-xl ${scrolled ? 'text-primary' : 'text-primary'}`}>e</span>
+              <span className="font-bold text-lg md:text-xl text-white">e</span>
             </div>
-            <span className={`font-primary font-bold text-lg md:text-xl transition-colors ${
-              scrolled ? 'text-primary' : 'text-white'
-            }`}>
-              learning
+            <span className="font-primary font-bold text-lg md:text-xl text-secondary-blue-dark transition-colors">
+              Canstudy Online Academy
             </span>
           </Link>
 
@@ -59,33 +56,18 @@ export const Header: React.FC = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-body-sm md:text-body-md font-medium transition-colors ${
-                  scrolled
-                    ? 'text-text-primary hover:text-primary'
-                    : 'text-white hover:text-accent'
-                }`}
+                className="relative text-heading-1 font-semibold text-secondary-blue-dark hover:text-secondary-blue-light transition-all duration-200 group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary-blue-light transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
-          </div>
-
-          {/* Desktop Button */}
-          <div className="hidden lg:block">
-            <Button
-              variant={scrolled ? 'primary' : 'accent'}
-              size="sm"
-            >
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors ${
-              scrolled ? 'text-text-primary' : 'text-white'
-            }`}
+            className="md:hidden p-2 text-secondary-blue-dark transition-colors z-10"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -105,21 +87,11 @@ export const Header: React.FC = () => {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-body-md font-medium text-text-primary hover:text-primary py-2 border-b border-gray-200"
+                  className="block text-body-md font-medium text-secondary-blue-dark hover:text-secondary-blue-light transition-colors py-2 border-b border-gray-200"
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-4">
-                <Button
-                  variant="primary"
-                  size="md"
-                  className="w-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Get Started
-                </Button>
-              </div>
             </div>
           </div>
         )}
