@@ -183,11 +183,21 @@ export default async function CourseDetailPage({
     notFound();
   }
 
-  // Get related courses (same category, exclude current)
+  // Get related courses (use relatedCourses field if available, otherwise same category, exclude current)
   const allCourses = await getCourses();
-  const relatedCourses = allCourses
-    .filter((c) => c.category === course.category && c.id !== course.id)
-    .slice(0, 3);
+  let relatedCourses: Course[];
+  
+  if (course.relatedCourses && course.relatedCourses.length > 0) {
+    // Use explicitly defined related courses
+    relatedCourses = allCourses
+      .filter((c) => course.relatedCourses!.includes(c.id))
+      .slice(0, 3);
+  } else {
+    // Fallback to category-based matching
+    relatedCourses = allCourses
+      .filter((c) => c.category === course.category && c.id !== course.id)
+      .slice(0, 3);
+  }
 
   // Structured data for AEO optimization
   const structuredData =

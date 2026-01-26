@@ -1,109 +1,165 @@
-'use client';
-
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import Image from 'next/image';
 import { Section } from '@/components/layout/Section';
-import { Input } from '@/components/ui/Input';
-import { Button } from '@/components/ui/Button';
-import { CONTACT_INFO } from '@/lib/constants';
-import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
-
-interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import { CONTACT_INFO, SOCIAL_LINKS } from '@/lib/constants';
+import { FiPhone, FiMail, FiMapPin, FiUsers, FiInstagram, FiFacebook, FiLinkedin } from 'react-icons/fi';
+import { FaTiktok } from 'react-icons/fa';
 
 export default function ContactPage() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ContactFormData>();
-
-  const onSubmit = async (data: ContactFormData) => {
-    console.log('Contact form submitted:', data);
-    // Handle form submission
-  };
-
   return (
-    <Section padding="xl" background="white" className="pt-32">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-display-2 font-primary font-bold text-text-primary mb-4 text-center">
-          Contact Us
-        </h1>
-        <p className="text-body-lg text-text-secondary text-center mb-12">
-          Get in touch with us for any questions or inquiries
-        </p>
+    <>
+      {/* Hero Banner */}
+      <section className="relative w-full h-[250px] md:h-[320px] lg:h-[400px]">
+        <Image
+          src="https://res.cloudinary.com/kingaat7/image/upload/v1742941666/CS-contactSyndi_tc8vpg.png"
+          alt="Contact Us"
+          fill
+          className="object-cover object-[center_75%]"
+          priority
+          sizes="100vw"
+        />
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <FiPhone className="text-2xl text-primary" />
+      <Section padding="xl" background="white" className="!py-[90px]">
+      <div className="max-w-4xl mx-auto">
+        {/* Top Section with Label, Heading, and Intro Text */}
+        <div className="mb-12">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+            <div className="flex-1">
+              <span className="inline-block px-3 py-1.5 rounded-full bg-gray-100 text-body-sm font-medium text-text-secondary mb-4">
+                HOW CAN WE HELP YOU?
+              </span>
+              <h1 className="text-display-1 md:text-[42px] lg:text-[48px] font-primary font-bold text-text-primary mb-4">
+                Get in touch with us!
+              </h1>
             </div>
-            <h3 className="text-heading-2 font-semibold text-text-primary mb-2">
-              Phone
-            </h3>
-            <p className="text-body-md text-text-secondary">{CONTACT_INFO.phone}</p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <FiMail className="text-2xl text-primary" />
+            <div className="flex-1 md:max-w-md">
+              <p className="text-body-md md:text-body-lg text-text-secondary leading-relaxed">
+                We're here to support you and answer any questions you may have. Feel free to reach out—we look forward to hearing from you!
+              </p>
             </div>
-            <h3 className="text-heading-2 font-semibold text-text-primary mb-2">
-              Email
-            </h3>
-            <p className="text-body-md text-text-secondary">{CONTACT_INFO.email}</p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <FiMapPin className="text-2xl text-primary" />
-            </div>
-            <h3 className="text-heading-2 font-semibold text-text-primary mb-2">
-              Address
-            </h3>
-            <p className="text-body-md text-text-secondary">{CONTACT_INFO.address}</p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <Input
-            label="Name"
-            {...register('name', { required: 'Name is required' })}
-            error={errors.name?.message}
-          />
-          <Input
-            label="Email"
-            type="email"
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: 'Invalid email address',
-              },
-            })}
-            error={errors.email?.message}
-          />
-          <div>
-            <label className="block text-body-sm font-medium text-text-primary mb-2">
-              Message
-            </label>
-            <textarea
-              {...register('message', { required: 'Message is required' })}
-              rows={6}
-              className="w-full px-4 py-3 rounded-md border border-gray-300 bg-white text-text-primary placeholder:text-text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-            />
-            {errors.message && (
-              <p className="mt-1 text-body-sm text-red-500">
-                {errors.message.message}
+        {/* Contact Details Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {/* Office location */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 mb-3">
+              <FiMapPin className="text-2xl text-text-primary" />
+              <h3 className="text-heading-2 font-semibold text-text-primary">
+                Office location
+              </h3>
+            </div>
+            <div className="h-px bg-gray-200 mb-3"></div>
+            <div className="space-y-1">
+              <p className="text-body-md text-text-secondary">
+                {CONTACT_INFO.address}
               </p>
-            )}
+              <p className="text-body-md text-text-secondary">
+                {CONTACT_INFO.city}
+              </p>
+            </div>
           </div>
-          <Button variant="primary" size="lg" type="submit" className="w-full">
-            Send Message
-          </Button>
-        </form>
+
+          {/* Send a message */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 mb-3">
+              <FiMail className="text-2xl text-text-primary" />
+              <h3 className="text-heading-2 font-semibold text-text-primary">
+                Send a message
+              </h3>
+            </div>
+            <div className="h-px bg-gray-200 mb-3"></div>
+            <div className="space-y-1">
+              <a
+                href={`mailto:${CONTACT_INFO.email}`}
+                className="text-body-md text-text-secondary hover:text-accent transition-colors"
+              >
+                {CONTACT_INFO.email}
+              </a>
+            </div>
+          </div>
+
+          {/* WhatsApp & Tollfree */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 mb-3">
+              <FiPhone className="text-2xl text-text-primary" />
+              <h3 className="text-heading-2 font-semibold text-text-primary">
+                WhatsApp & Tollfree
+              </h3>
+            </div>
+            <div className="h-px bg-gray-200 mb-3"></div>
+            <div className="space-y-1">
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                className="block text-body-md text-text-secondary hover:text-accent transition-colors"
+              >
+                {CONTACT_INFO.phone}
+              </a>
+              <a
+                href={`tel:${CONTACT_INFO.tollfree.replace(/[-\s]/g, '')}`}
+                className="block text-body-md text-text-secondary hover:text-accent transition-colors"
+              >
+                {CONTACT_INFO.tollfree}
+              </a>
+            </div>
+          </div>
+
+          {/* Our Social Platforms */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 mb-3">
+              <FiUsers className="text-2xl text-text-primary" />
+              <h3 className="text-heading-2 font-semibold text-text-primary">
+                Our Social Platforms
+              </h3>
+            </div>
+            <div className="h-px bg-gray-200 mb-3"></div>
+            <div className="space-y-2">
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-body-md text-text-secondary hover:text-accent transition-colors group"
+              >
+                <FiInstagram className="text-xl text-text-primary group-hover:text-accent transition-colors" />
+                <span>
+                  Instagram: <span className="font-medium">{CONTACT_INFO.social.instagram}</span>
+                </span>
+              </a>
+              <a
+                href={SOCIAL_LINKS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-body-md text-text-secondary hover:text-accent transition-colors group"
+              >
+                <FiFacebook className="text-xl text-text-primary group-hover:text-accent transition-colors" />
+                <span>
+                  Facebook: <span className="font-medium">{CONTACT_INFO.social.facebook}</span>
+                </span>
+              </a>
+              <a
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-body-md text-text-secondary hover:text-accent transition-colors group"
+              >
+                <FiLinkedin className="text-xl text-text-primary group-hover:text-accent transition-colors" />
+                <span>
+                  Linkedin: <span className="font-medium">{CONTACT_INFO.social.linkedin}</span>
+                </span>
+              </a>
+              <div className="flex items-center gap-3 text-body-md text-text-secondary">
+                <FaTiktok className="text-xl text-text-primary" />
+                <span>
+                  TikTok: <span className="font-medium">{CONTACT_INFO.social.tiktok}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Section>
+    </>
   );
 }

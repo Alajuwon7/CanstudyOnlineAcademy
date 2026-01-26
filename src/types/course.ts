@@ -25,6 +25,7 @@ export interface Course {
     available: boolean;
     description?: string;
   };
+  relatedCourses?: string[];
 }
 
 export interface CourseCategory {

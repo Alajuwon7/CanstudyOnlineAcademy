@@ -60,7 +60,8 @@
       "Admissions & Systems Knowledge: Gain insight into admission cycles, program types, and institution requirements worldwide.",
       "Institutional Partnership Building: Learn how to secure contracts and collaborations with educational institutions across multiple countries.",
       "Legal & Compliance Awareness: Understand how to reference study permit and visa information responsibly without offering immigration advice."
-    ]
+    ],
+    "relatedCourses": ["3"]
   },
   {
     "id": "3",
@@ -89,6 +90,7 @@
       "Communicate Professionally",
       "Collaborate with RCICs & Immigration Lawyers",
       "Build an Independent Business"
-    ]
+    ],
+    "relatedCourses": ["2"]
   }
 ]

@@ -157,12 +157,12 @@ export const PremiumLearning: React.FC = () => {
               </ul>
             </div>
 
-            {/* Explore courses button */}
+            {/* Learn More button */}
             <Link
               href="/courses"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold text-body-md md:text-body-lg px-6 py-3 md:px-8 md:py-4 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent shadow-button"
             >
-              Explore courses
+              Learn More
               <FiArrowRight className="w-5 h-5" aria-hidden />
             </Link>
           </div>

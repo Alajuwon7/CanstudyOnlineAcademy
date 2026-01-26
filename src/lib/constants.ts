@@ -23,7 +23,15 @@ export const SOCIAL_LINKS = {
 };
 
 export const CONTACT_INFO = {
-  phone: '+1 800 202 000',
+  phone: '647-895-1747',
+  tollfree: '+1-866-476-3433',
   email: 'info@canstudyconsult.com',
-  address: '123 Education Street, Learning City, LC 12345',
+  address: '3080 Yonge Street, Suite 6060',
+  city: 'Toronto, Ontario Canada M4N3N1',
+  social: {
+    instagram: '@canstudyconsult',
+    facebook: 'Canstudy Consulting',
+    linkedin: 'Canstudy Consulting',
+    tiktok: 'Coming Soon!',
+  },
 };
