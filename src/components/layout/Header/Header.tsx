@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { NAVIGATION_ITEMS } from '@/lib/constants';
 import { Container } from '../Container';
@@ -41,11 +42,18 @@ export const Header: React.FC = () => {
     >
       <Container>
         <nav className="relative flex items-center justify-between py-3 md:py-4">
-          <Link href="/" className="flex items-center gap-2 z-10">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent flex items-center justify-center">
-              <span className="font-bold text-lg md:text-xl text-white">e</span>
+          <Link href="/" className="flex items-center gap-1.5 z-10 min-w-0 flex-shrink">
+            <div className="relative w-40 h-10 md:w-48 md:h-12 flex-shrink-0">
+              <Image
+                src="https://res.cloudinary.com/kingaat7/image/upload/v1769453016/LogoCOA-1_q7jkhk.png"
+                alt="Canstudy Online Academy Logo"
+                fill
+                className="object-contain object-left"
+                priority
+                sizes="(max-width: 768px) 160px, 192px"
+              />
             </div>
-            <span className="font-primary font-bold text-lg md:text-xl text-secondary-blue-dark transition-colors">
+            <span className="font-primary font-bold text-lg md:text-xl text-secondary-blue-dark transition-colors whitespace-nowrap">
               Canstudy Online Academy
             </span>
           </Link>

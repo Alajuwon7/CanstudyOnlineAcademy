@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FiPhone, FiMail } from 'react-icons/fi';
 import {
@@ -31,11 +32,15 @@ export const Footer: React.FC = () => {
               transform: 'rotate(30deg)'
             }}
           >
-            <img
-              src="/images/designElement2.png"
-              alt=""
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/designElement2.png"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="600px"
+              />
+            </div>
           </div>
           {/* Design Element - Additional decorative element */}
           <div 
@@ -50,17 +55,32 @@ export const Footer: React.FC = () => {
               transform: 'rotate(30deg)'
             }}
           >
-            <img
-              src="/images/designElement.png"
-              alt=""
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/designElement.png"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="500px"
+              />
+            </div>
           </div>
         </div>
       <Container className="relative z-10">
         <div className="py-12 md:py-16 lg:py-9xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* About Section */}
           <div className="text-center md:text-left">
+            <Link href="/" className="inline-block mb-4 md:mb-6 md:block">
+              <div className="relative w-[160px] h-[160px] md:w-[200px] md:h-[200px] mx-auto md:mx-0">
+                <Image
+                  src="https://res.cloudinary.com/kingaat7/image/upload/v1769454070/LogoCOA-1FooterCircle_mw0nxx.png"
+                  alt="Canstudy Online Academy Logo"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 160px, 200px"
+                />
+              </div>
+            </Link>
             <p className="text-body-sm md:text-body-md text-white/80 mb-4 md:mb-6">
               We are providing high-quality courses for about five years.
             </p>

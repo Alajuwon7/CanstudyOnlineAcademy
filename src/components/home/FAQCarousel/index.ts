@@ -1,0 +1,1 @@
+export { FAQCarousel } from './FAQCarousel';

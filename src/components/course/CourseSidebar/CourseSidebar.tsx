@@ -67,7 +67,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 </span>
               </div>
               <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
-                {course.id === '1' ? 'Feb. 9th, 2026' : course.id === '2' ? 'March 12th, 2026' : 'Feb. 9th, 2026'}
+                {course.id === '1' ? 'Feb. 9th, 2026' : course.id === '2' ? 'March 12th, 2026' : course.id === '3' ? 'March 10th, 2026' : 'Feb. 9th, 2026'}
               </span>
             </div>
 
@@ -142,8 +142,12 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
           {/* Enroll Button */}
           <a
             href={
-              course.id === '2'
+              course.id === '1'
+                ? 'https://form.jotform.com/canstudy_consult/french'
+                : course.id === '2'
                 ? 'https://form.jotform.com/canstudy_consult/ger'
+                : course.id === '3'
+                ? 'https://form.jotform.com/canstudy_consult/irss'
                 : 'https://form.jotform.com/canstudy_consult/french'
             }
             target="_blank"

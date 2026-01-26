@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Section } from '@/components/layout/Section';
 import { CourseDetails } from '@/components/course/CourseDetails';
@@ -12,6 +13,162 @@ export async function generateStaticParams() {
   return courses.map((course) => ({
     id: course.id,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const course = await getCourseById(id);
+
+  if (!course) {
+    return {
+      title: 'Course Not Found',
+    };
+  }
+
+  // French Course (ID "1") specific metadata
+  if (course.id === '1') {
+    return {
+      title: 'Master French Online | Learn French with Live Classes – Canstudy Online Academy',
+      description:
+        'Beginner-friendly and globally relevant. Learn French online through live, interactive classes that build fluency, confidence, and real-world communication skills. Perfect for professionals, travelers, and global learners.',
+      keywords: [
+        'learn French online',
+        'French classes for beginners',
+        'live French course',
+        'online French language training',
+        'interactive French lessons',
+        'professional French classes',
+      ],
+      openGraph: {
+        title: 'Master French Online | Learn French with Live Classes – Canstudy Online Academy',
+        description:
+          'Beginner-friendly and globally relevant. Learn French online through live, interactive classes that build fluency, confidence, and real-world communication skills. Perfect for professionals, travelers, and global learners.',
+        url: `https://canstudyacademy.com/courses/${course.id}`,
+        siteName: 'Canstudy Online Academy',
+        images: course.image
+          ? [
+              {
+                url: course.image.startsWith('http')
+                  ? course.image
+                  : `https://canstudyacademy.com${course.image}`,
+                width: 1200,
+                height: 630,
+                alt: `${course.title} - Canstudy Online Academy`,
+              },
+            ]
+          : [],
+        locale: 'en_US',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Master French Online | Learn French with Live Classes – Canstudy Online Academy',
+        description:
+          'Beginner-friendly and globally relevant. Learn French online through live, interactive classes that build fluency, confidence, and real-world communication skills.',
+        images: course.image
+          ? [
+              course.image.startsWith('http')
+                ? course.image
+                : `https://canstudyacademy.com${course.image}`,
+            ]
+          : [],
+      },
+    };
+  }
+
+  // Global Education Recruiter Training Program (ID "2") specific metadata
+  if (course.id === '2') {
+    return {
+      title: 'Global Education Recruiter Training Program | Build a Career in International Student Recruitment',
+      description:
+        'Learn how to ethically recruit and support international students while building a profitable, globally transferable consulting business. Gain real-world experience from education and immigration professionals.',
+      keywords: [
+        'education recruiter training',
+        'international student recruitment course',
+        'study abroad consultant training',
+        'global education consultant program',
+        'online recruiter certification',
+        'international admissions training',
+      ],
+      openGraph: {
+        title: 'Global Education Recruiter Training Program | Build a Career in International Student Recruitment',
+        description:
+          'Learn how to ethically recruit and support international students while building a profitable, globally transferable consulting business. Gain real-world experience from education and immigration professionals.',
+        url: `https://canstudyacademy.com/courses/${course.id}`,
+        siteName: 'Canstudy Online Academy',
+        images: course.image
+          ? [
+              {
+                url: course.image.startsWith('http')
+                  ? course.image
+                  : `https://canstudyacademy.com${course.image}`,
+                width: 1200,
+                height: 630,
+                alt: `${course.title} - Canstudy Online Academy`,
+              },
+            ]
+          : [],
+        locale: 'en_US',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Global Education Recruiter Training Program | Build a Career in International Student Recruitment',
+        description:
+          'Learn how to ethically recruit and support international students while building a profitable, globally transferable consulting business. Gain real-world experience from education and immigration professionals.',
+        images: course.image
+          ? [
+              course.image.startsWith('http')
+                ? course.image
+                : `https://canstudyacademy.com${course.image}`,
+            ]
+          : [],
+      },
+    };
+  }
+
+  // Default metadata for other courses
+  return {
+    title: `${course.title} – Canstudy Online Academy`,
+    description: course.description || course.fullDescription || '',
+    keywords: course.tags || [],
+    openGraph: {
+      title: `${course.title} – Canstudy Online Academy`,
+      description: course.description || course.fullDescription || '',
+      url: `https://canstudyacademy.com/courses/${course.id}`,
+      siteName: 'Canstudy Online Academy',
+      images: course.image
+        ? [
+            {
+              url: course.image.startsWith('http')
+                ? course.image
+                : `https://canstudyacademy.com${course.image}`,
+              width: 1200,
+              height: 630,
+              alt: `${course.title} - Canstudy Online Academy`,
+            },
+          ]
+        : [],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${course.title} – Canstudy Online Academy`,
+      description: course.description || course.fullDescription || '',
+      images: course.image
+        ? [
+            course.image.startsWith('http')
+              ? course.image
+              : `https://canstudyacademy.com${course.image}`,
+          ]
+        : [],
+    },
+  };
 }
 
 export default async function CourseDetailPage({
@@ -32,8 +189,81 @@ export default async function CourseDetailPage({
     .filter((c) => c.category === course.category && c.id !== course.id)
     .slice(0, 3);
 
+  // Structured data for AEO optimization
+  const structuredData =
+    course.id === '1'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'What is Canstudy Online Academy?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Canstudy Online Academy is a global e-learning platform offering short, career-focused courses led by real instructors, designed to help learners build in-demand skills for professional success.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Where can I learn new skills online?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'At Canstudy Online Academy, learners can access live, instructor-led online classes designed to fit flexible schedules and teach real-world skills.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'You can learn French online with Canstudy Online Academy through live, instructor-led classes that focus on pronunciation, grammar, and real-life communication.',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Yes, you can learn French online with Canstudy Online Academy through live, instructor-led classes that focus on pronunciation, grammar, and real-life communication. Our beginner-friendly French course is designed for professionals, travelers, and global learners who want to build fluency and confidence.',
+              },
+            },
+          ],
+        }
+      : course.id === '2'
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is Canstudy Online Academy?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Canstudy Online Academy is a global e-learning platform offering short, career-focused courses led by real instructors, designed to help learners build in-demand skills for professional success.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Where can I learn new skills online?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'At Canstudy Online Academy, learners can access live, instructor-led online classes designed to fit flexible schedules and teach real-world skills.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'The Global Education Recruiter Training Program teaches participants how to ethically recruit international students, secure partnerships with institutions, and build sustainable consulting careers in the global education sector.',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'The Global Education Recruiter Training Program teaches participants how to ethically recruit international students, secure partnerships with institutions, and build sustainable consulting careers in the global education sector. This 8-week professional training program is designed for individuals who want to build a profitable career or business in international student recruitment, with real-world experience from education and immigration professionals.',
+                },
+              },
+            ],
+          }
+        : null;
+
   return (
     <>
+      {/* Structured Data for SEO */}
+      {structuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      )}
       {/* Hero Section */}
       <section
         className="relative text-white pt-24 pb-16 md:pt-32 md:pb-20"
@@ -57,11 +287,15 @@ export default async function CourseDetailPage({
               transform: 'rotate(30deg)'
             }}
           >
-            <img
-              src="/images/designElement2.png"
-              alt=""
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/designElement2.png"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="600px"
+              />
+            </div>
           </div>
           <div 
             className="absolute"
@@ -75,11 +309,15 @@ export default async function CourseDetailPage({
               transform: 'rotate(30deg)'
             }}
           >
-            <img
-              src="/images/designElement.png"
-              alt=""
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/designElement.png"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="500px"
+              />
+            </div>
           </div>
         </div>
 
@@ -90,11 +328,20 @@ export default async function CourseDetailPage({
                 Courses details
               </p>
               <h1 className="text-[32px] md:text-[48px] lg:text-[60px] font-primary font-bold leading-[1.2] tracking-[-2px] mb-0">
-                {course.title}
+                {course.id === '2'
+                  ? 'Global Education Recruiter'
+                  : course.id === '3'
+                  ? 'Immigration Recruitment & Support Specialist™'
+                  : course.title}
               </h1>
-              {course.id === '1' && (
+              {course.id === '2' && (
                 <h2 className="text-[20px] md:text-[24px] lg:text-[28px] font-primary font-semibold text-white/90 mt-2 tracking-[-0.5px]">
-                  Beginner to Intermediate
+                  Training Program
+                </h2>
+              )}
+              {course.id === '3' && (
+                <h2 className="text-[20px] md:text-[24px] lg:text-[28px] font-primary font-semibold text-white/90 mt-2 tracking-[-0.5px]">
+                  Training Program
                 </h2>
               )}
             </div>
@@ -147,6 +394,8 @@ export default async function CourseDetailPage({
                       ? 'Languages & Global Communication'
                       : course.id === '2'
                       ? 'Business & Professional Development'
+                      : course.id === '3'
+                      ? 'Professional Development & Compliance Training'
                       : course.category}
                   </span>
                 </span>
@@ -199,6 +448,8 @@ export default async function CourseDetailPage({
                       ? 'Languages & Global Communication'
                       : course.id === '2'
                       ? 'Business & Professional Development'
+                      : course.id === '3'
+                      ? 'Professional Development & Compliance Training'
                       : course.category}
                   </span>
                 </span>

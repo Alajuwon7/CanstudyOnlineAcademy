@@ -31,11 +31,15 @@ export const Hero: React.FC = () => {
             transform: 'rotate(30deg)'
           }}
         >
-          <img
-            src="/images/designElement2.png"
-            alt=""
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/designElement2.png"
+              alt=""
+              fill
+              className="object-contain"
+              sizes="600px"
+            />
+          </div>
         </div>
         {/* Design Element - Additional decorative element (more visible) */}
         <div 
@@ -50,11 +54,15 @@ export const Hero: React.FC = () => {
             transform: 'rotate(30deg)'
           }}
         >
-          <img
-            src="/images/designElement.png"
-            alt=""
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/designElement.png"
+              alt=""
+              fill
+              className="object-contain"
+              sizes="500px"
+            />
+          </div>
         </div>
         {/* Additional design elements for depth */}
         <div 
@@ -69,11 +77,15 @@ export const Hero: React.FC = () => {
             transform: 'translate(-50%, -50%) rotate(30deg)'
           }}
         >
-          <img
-            src="/images/designElement2.png"
-            alt=""
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/designElement2.png"
+              alt=""
+              fill
+              className="object-contain"
+              sizes="400px"
+            />
+          </div>
         </div>
         {/* Accent blur circles for depth */}
         <div className="absolute top-20 right-20 w-96 h-96 bg-accent rounded-full blur-3xl opacity-10" />

@@ -30,6 +30,18 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                     While Canada is used as a case study and reference point throughout the training—due to its structured education system and global recognition—the skills taught in this program are fully transferable and applicable to recruiting for institutions in any country. In addition to recruitment and admissions knowledge, participants will learn the business side of education consulting, including how to secure institutional partnerships, structure services, and build a sustainable education consulting business. Training is delivered by industry professionals at Canstudy Consulting, with a strong focus on real-world application, ethical practice, and long-term career viability.
                   </p>
                 </>
+              ) : course.id === '3' ? (
+                <>
+                  <p>
+                    The Immigration Recruitment & Support Specialist™ (IRSS) Training Program by Canstudy Online Academy equips participants with the skills to operate as ethical, professional immigration agents working in partnership with licensed Regulated Canadian Immigration Consultants (RCICs) and Canadian immigration lawyers — while managing their own independent business from anywhere in the world.
+                  </p>
+                  <p>
+                    This comprehensive 8-week program is designed for individuals seeking a legitimate entry point into the Canadian immigration industry without needing to become a licensed consultant. Participants will learn how to ethically recruit and pre-screen clients, manage administrative documentation, and support immigration files within clearly defined legal boundaries.
+                  </p>
+                  <p>
+                    The program emphasizes compliance, professional integrity, and remote career readiness, ensuring every graduate operates confidently and lawfully in a support capacity within the global immigration ecosystem.
+                  </p>
+                </>
               ) : (
                 <p>
                   This course focuses on building a foundational understanding of the French language while gaining exposure to French culture, sounds, and pronunciation. The course covers basic grammar (gender, verb conjugation patterns, word order in sentences and questions), vocabulary and essential concepts needed for effective communication in everyday situations. The course also delves into intermediate grammatical structures and vocabulary needed to provide more detailed information in a given situation.
@@ -101,53 +113,106 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
               Benefits of doing the program
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
-                <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                <span>
-                  <strong>Boost Your Canadian PR Score</strong> - Improve your French proficiency to earn additional CRS points and strengthen your Express Entry or PR application.
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
-                <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                <span>
-                  <strong>Career & Study Advantage</strong> - French skills open doors to bilingual jobs, scholarships, and study opportunities across Canada—especially in Quebec and bilingual provinces.
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
-                <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                <span>
-                  <strong>Structured, Results-Driven Learning</strong> - A guided program designed for real progress, not just theory—focused on practical French for exams, work, and daily communication.
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
-                <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                <span>
-                  <strong>Exam & Immigration Focused</strong> - Tailored support for TEF/TCF preparation and the specific language benchmarks required for Canadian immigration pathways.
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
-                <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                <span>
-                  <strong>Expert Support & Accountability</strong> - Learn with experienced instructors and a supportive cohort that keeps you motivated and consistent.
-                </span>
-              </li>
-              <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
-                <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
-                <span>
-                  <strong>Confidence in Real-Life French</strong> - Develop speaking, listening, reading, and writing skills to confidently navigate interviews, exams, and everyday situations.
-                </span>
-              </li>
+              {course.id === '3' ? (
+                <>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Gain a legitimate entry point into the immigration industry without requiring a license.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Build a remote-friendly, globally flexible career supporting immigration professionals.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Receive compliance-safe training that protects you, your clients, and your business.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Develop practical, job-ready, and business-ready skills for immediate application.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Earn a Certificate of Completion from Canstudy Online Academy, recognized for professional credibility.</span>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>
+                      <strong>Boost Your Canadian PR Score</strong> - Improve your French proficiency to earn additional CRS points and strengthen your Express Entry or PR application.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>
+                      <strong>Career & Study Advantage</strong> - French skills open doors to bilingual jobs, scholarships, and study opportunities across Canada—especially in Quebec and bilingual provinces.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>
+                      <strong>Structured, Results-Driven Learning</strong> - A guided program designed for real progress, not just theory—focused on practical French for exams, work, and daily communication.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>
+                      <strong>Exam & Immigration Focused</strong> - Tailored support for TEF/TCF preparation and the specific language benchmarks required for Canadian immigration pathways.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>
+                      <strong>Expert Support & Accountability</strong> - Learn with experienced instructors and a supportive cohort that keeps you motivated and consistent.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-700 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>
+                      <strong>Confidence in Real-Life French</strong> - Develop speaking, listening, reading, and writing skills to confidently navigate interviews, exams, and everyday situations.
+                    </span>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
-          <div className="pt-10 pb-6">
-            <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
-              Important Note
-            </h3>
-            <p className="text-body-md text-gray-800 leading-[30px]">
-              This professional development program is open to participants worldwide. The training does not provide immigration or legal advice. All study permit and visa discussions are contextual, based on publicly available government information.
-            </p>
-          </div>
+          {course.id === '3' ? (
+            <div className="pt-10 pb-6">
+              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                Who This Course Is For
+              </h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Individuals outside Canada seeking a legitimate remote career in immigration support</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Professionals aspiring to collaborate with RCICs and immigration lawyers</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Entrepreneurs building global immigration support agencies</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Administrative professionals looking to upskill in compliance-based workflows</span>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="pt-10 pb-6">
+              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                Important Note
+              </h3>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                This professional development program is open to participants worldwide. The training does not provide immigration or legal advice. All study permit and visa discussions are contextual, based on publicly available government information.
+              </p>
+            </div>
+          )}
         </div>
       ),
     },
@@ -155,68 +220,76 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
       id: 'content',
       label: 'Content',
       content: (
-        <div className="pt-6 space-y-8">
-          {/* Level 1 */}
-          <div>
-            <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
-              Level 1 – Foundations of French (A1-A2)
-            </h3>
+        <div className="pt-6">
+          {course.id === '2' || course.id === '3' ? (
             <p className="text-body-md text-gray-800 leading-[30px]">
-              Build your basics in pronunciation, sentence structure, gender, and verb conjugation. Learn to introduce yourself, ask and answer everyday questions, and express simple ideas with confidence.
+              Course content will be provided upon enrollment completion.
             </p>
-          </div>
+          ) : (
+            <div className="space-y-8">
+              {/* Level 1 */}
+              <div>
+                <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
+                  Level 1 – Foundations of French (A1-A2)
+                </h3>
+                <p className="text-body-md text-gray-800 leading-[30px]">
+                  Build your basics in pronunciation, sentence structure, gender, and verb conjugation. Learn to introduce yourself, ask and answer everyday questions, and express simple ideas with confidence.
+                </p>
+              </div>
 
-          {/* Level 2 */}
-          <div>
-            <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
-              Level 2 – Everyday Communication (B1)
-            </h3>
-            <p className="text-body-md text-gray-800 leading-[30px]">
-              Expand your vocabulary and grammar while learning to narrate past events, share opinions, and describe experiences using Perfect and Imperfect tenses.
-            </p>
-          </div>
+              {/* Level 2 */}
+              <div>
+                <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
+                  Level 2 – Everyday Communication (B1)
+                </h3>
+                <p className="text-body-md text-gray-800 leading-[30px]">
+                  Expand your vocabulary and grammar while learning to narrate past events, share opinions, and describe experiences using Perfect and Imperfect tenses.
+                </p>
+              </div>
 
-          {/* Level 3 */}
-          <div>
-            <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
-              Level 3 – Advanced Conversation & Expression (B2)
-            </h3>
-            <p className="text-body-md text-gray-800 leading-[30px]">
-              Master complex grammar forms like the Conditional and Subjunctive tenses. Engage in debates, discussions, and real-world conversations about work, travel, and culture.
-            </p>
-          </div>
+              {/* Level 3 */}
+              <div>
+                <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
+                  Level 3 – Advanced Conversation & Expression (B2)
+                </h3>
+                <p className="text-body-md text-gray-800 leading-[30px]">
+                  Master complex grammar forms like the Conditional and Subjunctive tenses. Engage in debates, discussions, and real-world conversations about work, travel, and culture.
+                </p>
+              </div>
 
-          {/* Live Sessions */}
-          <div>
-            <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
-              Live Sessions Include:
-            </h3>
-            <ul className="space-y-2">
-              <li className="flex items-baseline gap-2">
-                <span className="text-accent text-lg leading-none">•</span>
-                <span className="text-body-md text-gray-800">Pronunciation and listening drills</span>
-              </li>
-              <li className="flex items-baseline gap-2">
-                <span className="text-accent text-lg leading-none">•</span>
-                <span className="text-body-md text-gray-800">Interactive dialogue practice</span>
-              </li>
-              <li className="flex items-baseline gap-2">
-                <span className="text-accent text-lg leading-none">•</span>
-                <span className="text-body-md text-gray-800">Weekly grammar and vocabulary games</span>
-              </li>
-              <li className="flex items-baseline gap-2">
-                <span className="text-accent text-lg leading-none">•</span>
-                <span className="text-body-md text-gray-800">Cultural immersion activities</span>
-              </li>
-            </ul>
-          </div>
+              {/* Live Sessions */}
+              <div>
+                <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                  Live Sessions Include:
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Pronunciation and listening drills</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Interactive dialogue practice</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Weekly grammar and vocabulary games</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Cultural immersion activities</span>
+                  </li>
+                </ul>
+              </div>
 
-          {/* Outcome */}
-          <div>
-            <p className="text-body-md text-gray-800 leading-[30px]">
-              By the end of the program, you'll be able to communicate clearly, express nuanced thoughts, and navigate French-speaking environments with ease.
-            </p>
-          </div>
+              {/* Outcome */}
+              <div>
+                <p className="text-body-md text-gray-800 leading-[30px]">
+                  By the end of the program, you'll be able to communicate clearly, express nuanced thoughts, and navigate French-speaking environments with ease.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       ),
     },
@@ -225,7 +298,7 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
       label: 'Instructor',
       content: (
         <div className="pt-6">
-          {course.id === '2' ? (
+          {course.id === '2' || course.id === '3' ? (
             <div className="space-y-4">
               <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
                 Meet Your Instructor: Mrs. Monique Myers
@@ -237,7 +310,9 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                 International Education Consultant | RCIC #R731184
               </p>
               <p className="text-body-md text-gray-800 leading-[30px]">
-                With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the Global Education Recruiter Training Program.
+                {course.id === '2' 
+                  ? 'With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the Global Education Recruiter Training Program.'
+                  : 'With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the Immigration Recruitment & Support Specialist™ Training Program.'}
               </p>
               <p className="text-body-md text-gray-800 leading-[30px]">
                 A Caribbean native who began her own international journey as a student in Toronto, Monique transformed her academic foundation in Criminology and Political Science into a purpose-driven career in international education and immigration consulting.
@@ -246,7 +321,9 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                 After earning permanent residency in Canada, she further specialized in Canadian Immigration Law and Policy, becoming a Regulated Canadian Immigration Consultant (RCIC). Through her companies — Canstudy Consulting and Myers Immigration Services — she has trained and advised hundreds of students, consultants, and partner institutions worldwide.
               </p>
               <p className="text-body-md text-gray-800 leading-[30px]">
-                Today, Monique is recognized for her practical, ethics-driven approach to education recruitment and her commitment to preparing the next generation of professionals to thrive in the global education industry.
+                {course.id === '2'
+                  ? 'Today, Monique is recognized for her practical, ethics-driven approach to education recruitment and her commitment to preparing the next generation of professionals to thrive in the global education industry.'
+                  : 'Today, Monique is recognized for her practical, ethics-driven approach to immigration recruitment and her commitment to preparing the next generation of professionals to thrive in the global immigration industry.'}
               </p>
             </div>
           ) : (

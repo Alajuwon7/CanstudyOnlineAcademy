@@ -64,24 +64,31 @@
   },
   {
     "id": "3",
-    "title": "Introduction to application design and development",
-    "description": "Get started with modern application design and development practices.",
-    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "category": "Design",
+    "title": "Immigration Recruitment & Support Specialist™ Training Program",
+    "description": "Professional training program for individuals seeking to build a career in immigration recruitment and support services.",
+    "fullDescription": "This comprehensive 8-week training program equips you with the knowledge and skills to excel as an Immigration Recruitment & Support Specialist. Learn how to guide clients through immigration processes, understand immigration systems, and build successful recruitment and support strategies. The program runs from March 10 – May 5, 2026, with live, instructor-led online training sessions on Tuesdays, 11:00 AM – 1:00 PM EST, and access to session recordings for flexible learning.",
+    "category": "Development",
     "instructor": {
       "id": "3",
-      "name": "Norman miller",
-      "avatar": "/images/instructors/norman.jpg"
+      "name": "Monique Myers",
+      "avatar": "https://res.cloudinary.com/kingaat7/image/upload/v1769404443/MMInstructImage_orfcbz.png"
     },
-    "price": 80,
-    "enrolledStudents": 55,
-    "lessons": 15,
+    "price": 1500,
+    "enrolledStudents": 0,
+    "lessons": 8,
     "language": "English",
-    "duration": "5 weeks",
-    "rating": 4.7,
-    "reviews": 35,
+    "duration": "8 Weeks",
+    "rating": 0,
+    "reviews": 0,
     "image": "/images/COA4.png",
-    "tags": ["Design", "Development", "Applications"],
-    "featured": false
+    "tags": ["Immigration", "Recruitment", "Support", "Training", "Business"],
+    "featured": true,
+    "whatYoullLearn": [
+      "Recruit and Pre-Screen Clients Ethically",
+      "Conduct Compliant Client Intake",
+      "Communicate Professionally",
+      "Collaborate with RCICs & Immigration Lawyers",
+      "Build an Independent Business"
+    ]
   }
 ]

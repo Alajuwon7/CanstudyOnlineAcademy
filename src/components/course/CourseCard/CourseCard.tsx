@@ -29,7 +29,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         </div>
         <div className="p-4 md:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-3">
-            <Badge variant="category" className="w-fit">{course.category}</Badge>
+            <Badge variant="category" className="w-fit">
+              {course.id === '3' ? 'Prof. Development' : course.category}
+            </Badge>
             <div className="flex items-center gap-2">
               {course.instructor.avatar && (
                 <div className="relative w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
@@ -56,7 +58,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                 <FiVideo className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
               </div>
               <span className="font-medium">
-                {course.id === '2' ? 'Thursday' : course.id === '1' ? 'Monday - Wednesday - Thursday' : 'Mon. Wed. Thur.'}
+                {course.id === '1' ? 'Mondays - Wednesdays - Thursdays' : course.id === '2' ? 'Thursdays' : course.id === '3' ? 'Tuesdays' : 'Mon. Wed. Thur.'}
               </span>
             </div>
             {/* Second row: Clock icon with time and Calendar icon with duration */}
@@ -66,7 +68,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                   <FiClock className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
                 </div>
                 <span className="font-medium">
-                  {course.id === '2' ? '11:00 AM - 1:00 PM EST' : '6:30 PM - 7:30 PM EST'}
+                  {course.id === '2' || course.id === '3' ? '11:00 AM - 1:00 PM EST' : '6:30 PM - 7:30 PM EST'}
                 </span>
               </div>
               <div className="flex items-center gap-2">
