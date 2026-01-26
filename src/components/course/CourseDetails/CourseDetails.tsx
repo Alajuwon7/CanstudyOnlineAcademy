@@ -380,10 +380,19 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             Professional. Practical. Globally Transferable.
           </h2>
         )}
+        {course.id === '3' && (
+          <h2 className="text-heading-1 font-semibold text-black mb-4 tracking-[-0.5px]">
+            Compliance-Focused. Career-Driven. Globally Accessible.
+          </h2>
+        )}
         <div className="text-body-md text-gray-800 leading-[30px]">
           {course.id === '2' ? (
             <p>
               Step into the world of international education recruitment and learn how to build a successful, ethical, and globally recognized career in the field. This hands-on program teaches you how to recruit students for schools, colleges, and universities worldwide while mastering the business side of education consulting. Through live, instructor-led sessions, you'll gain real-world knowledge on admissions systems, institutional partnerships, and compliance-safe recruitment practices. Whether you're starting out or expanding your consulting business, you'll graduate ready to operate confidently in the global education industry.
+            </p>
+          ) : course.id === '3' ? (
+            <p>
+              Launch a legitimate career in the global immigration industry — no license required. This professional, instructor-led program trains you to ethically recruit and support clients for licensed RCICs and immigration lawyers while managing your own independent business. Through live classes, real-world templates, and compliance-based training, you'll gain the knowledge, confidence, and systems to operate as a trusted Immigration Recruitment & Support Specialist™ anywhere in the world.
             </p>
           ) : (
             <p>

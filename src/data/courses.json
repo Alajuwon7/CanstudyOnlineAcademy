@@ -17,7 +17,7 @@
     "duration": "35 Weeks",
     "rating": 4.5,
     "reviews": 20,
-    "image": "/images/COA2.png",
+    "image": "https://res.cloudinary.com/kingaat7/image/upload/v1769462629/8_qw9vwz.png",
     "videoThumbnail": "/images/COA3.png",
     "tags": ["Accounting", "Business", "Taxation"],
     "featured": true,
@@ -51,7 +51,7 @@
     "duration": "8 Weeks",
     "rating": 0,
     "reviews": 0,
-    "image": "/images/COA3.png",
+    "image": "https://res.cloudinary.com/kingaat7/image/upload/v1769462629/3_b3pfou.png",
     "tags": ["Recruitment", "Education", "Business", "Training"],
     "featured": true,
     "whatYoullLearn": [
@@ -80,7 +80,7 @@
     "duration": "8 Weeks",
     "rating": 0,
     "reviews": 0,
-    "image": "/images/COA4.png",
+    "image": "https://res.cloudinary.com/kingaat7/image/upload/v1747394809/Career_support_om271r.png",
     "tags": ["Immigration", "Recruitment", "Support", "Training", "Business"],
     "featured": true,
     "whatYoullLearn": [

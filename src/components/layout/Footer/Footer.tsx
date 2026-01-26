@@ -220,8 +220,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-white/10 py-4 md:py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-body-xs md:text-body-sm text-white/60 max-w-2xl md:max-w-none">
-              © 2020 Studi 2006 Study Online Academy - Powered by Camstudy
-              Consulting Ltd.
+              2026 Canstudy Online Academy - Powered by Canstudy Consulting Ltd. All Rights Reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6">
               {NAVIGATION_ITEMS.slice(0, 5).map((item) => (
