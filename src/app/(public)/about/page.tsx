@@ -71,17 +71,30 @@ export default function AboutPage() {
             About Canstudy Online Academy
           </h1>
           <div className="prose max-w-none space-y-6">
-            <p className="text-body-lg text-text-secondary font-semibold">
-              Canstudy Online Academy is the education division of Canstudy Consulting, offering live, expert-led online courses for global learners seeking to enhance their skills and careers.
+            <p className="text-body-lg text-gray-800 font-semibold">
+              Empowering global learners through practical, career-ready education.
             </p>
-            <p className="text-body-lg text-text-secondary">
-              Canstudy Online Academy is a global hub for short, practical, and career-focused online courses. We connect learners with industry experts to help them gain real skills, confidence, and career advancement opportunities.
+            <p className="text-body-lg text-gray-800">
+              Canstudy Online Academy (COA) is a global learning platform powered by Canstudy Consulting Ltd., a leader in international education, immigration, and professional training. COA was built on the belief that learning should be accessible, relevant, and transformative — preparing learners worldwide for the skills and careers shaping the future.
             </p>
-            <p className="text-body-md text-text-secondary">
-              Our mission is to make high-quality, professional education accessible to everyone, everywhere. Through our live, instructor-led programs, we empower learners worldwide to build practical, job-ready skills that translate directly into career growth and personal development.
+            <p className="text-body-md text-gray-800">
+              Our academy delivers short, practical courses taught by real industry professionals — not just lecturers. Every program is designed to bridge the gap between theory and real-world application, giving students the tools to thrive in today's competitive job market. Whether you're enhancing your professional qualifications, developing global career skills, or exploring new industries, COA offers flexible, instructor-led learning that fits your life and goals.
             </p>
-            <p className="text-body-md text-text-secondary">
-              Whether you're looking to master a new language, build expertise in education consulting, or develop professional skills for the global marketplace, Canstudy Online Academy provides the expert guidance and flexible learning environment you need to succeed.
+            <p className="text-body-md text-gray-800">
+              From language and communication programs to career-focused certifications in education and immigration recruitment, our courses are built for global learners seeking fast, credible, and skill-based training — anywhere in the world.
+            </p>
+            <p className="text-body-md text-gray-800">
+              COA operates with the same excellence and integrity that define Canstudy Consulting Ltd., ensuring that every course meets the highest standards of quality, ethics, and global relevance.
+            </p>
+            <p className="text-body-md text-gray-800">
+              To learn more about our founding organization and the broader mission behind Canstudy's educational ecosystem, visit{' '}
+              <Link href="https://canstudyconsult.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Canstudy Consulting Ltd.
+              </Link>
+              .
+            </p>
+            <p className="text-body-md text-gray-800">
+              Together, we're not just offering courses — we're building pathways for people around the world to learn, grow, and lead.
             </p>
             <div className="pt-4">
               <Link href="/courses">

@@ -35,7 +35,21 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
       {/* Video Thumbnail */}
       <Card variant="sidebar" className="p-0 overflow-hidden bg-gray-100 rounded-md">
         <div className="relative h-[220px] w-full">
-          {course.videoThumbnail ? (
+          {course.id === '1' ? (
+            <Image
+              src="https://img.youtube.com/vi/zLJCJQI1lVU/hqdefault.jpg"
+              alt={`${course.title} – Course overview video`}
+              fill
+              className="object-cover"
+            />
+          ) : course.id === '3' ? (
+            <Image
+              src="https://res.cloudinary.com/kingaat7/image/upload/v1769526126/3_p0g65t.png"
+              alt={`${course.title} – Course overview video`}
+              fill
+              className="object-cover"
+            />
+          ) : course.videoThumbnail ? (
             <Image
               src={course.videoThumbnail}
               alt={course.title}
@@ -46,9 +60,19 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
             <div className="w-full h-full bg-gray-200" />
           )}
           <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <button className="w-[70px] h-[70px] rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors shadow-lg">
+            <a
+              href={
+                course.id === '3'
+                  ? 'https://canstudyconsultcom-my.sharepoint.com/personal/info_canstudyconsult_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Finfo%5Fcanstudyconsult%5Fcom%2FDocuments%2FCanstudy%20Consulting%2FC%2E%20CANSTUDY%20ONLINE%20ACADEMY%2FImmigration%20Recruitment%20%26%20Support%20Specialist%2FDemo%20Class%20%2D%20Jan%2E%2020th%202026%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E72b94426%2D5e44%2D4f50%2Da046%2D2076b711d94a'
+                  : 'https://youtu.be/zLJCJQI1lVU'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Play course overview video"
+              className="w-[70px] h-[70px] rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors shadow-lg"
+            >
               <FiPlay className="text-primary text-xl ml-1" />
-            </button>
+            </a>
           </div>
         </div>
 
