@@ -70,9 +70,9 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
             <a
               href={
                 course.id === '2'
-                  ? 'https://canstudyconsultcom-my.sharepoint.com/personal/info_canstudyconsult_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Finfo%5Fcanstudyconsult%5Fcom%2FDocuments%2FCanstudy%20Consulting%2FC%2E%20CANSTUDY%20ONLINE%20ACADEMY%2FGlobal%20Education%20Recruiter%2FDemo%20Class%20%2D%20Jan%2E%2014th%2FDemo%20Class%20Recording%20%2D%20Jan%2E%202026%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E8afd1933%2Ddc7a%2D47b5%2Dac97%2D696fe951eb30'
+                  ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBfsYGHTzMMT65PQUaVPm45AYN-adCSSOEKyRRPFLh_Jdw?e=oeHcc5'
                   : course.id === '3'
-                  ? 'https://canstudyconsultcom-my.sharepoint.com/personal/info_canstudyconsult_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Finfo%5Fcanstudyconsult%5Fcom%2FDocuments%2FCanstudy%20Consulting%2FC%2E%20CANSTUDY%20ONLINE%20ACADEMY%2FImmigration%20Recruitment%20%26%20Support%20Specialist%2FDemo%20Class%20%2D%20Jan%2E%2020th%202026%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E72b94426%2D5e44%2D4f50%2Da046%2D2076b711d94a'
+                  ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBeDgeyZWeKSqGhYphHv1d_AUxCeYAlwIIQiCzHjyw4GFQ?e=ut8dwO'
                   : 'https://youtu.be/zLJCJQI1lVU'
               }
               target="_blank"
