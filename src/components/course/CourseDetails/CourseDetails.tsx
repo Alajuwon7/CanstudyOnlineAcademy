@@ -327,9 +327,23 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
               </p>
             </div>
           ) : (
-            <p className="text-body-md text-text-secondary">
-              Instructor information will be displayed here.
-            </p>
+            <div className="space-y-4">
+              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                Meet Your Instructor: Ms. Cherice Parsotan
+              </h3>
+              <p className="text-body-md text-gray-800 leading-[30px] font-semibold">
+                French, Spanish, and ESL Tutor | Education Consultant, Canstudy Consulting Ltd.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                With over 15 years of experience teaching French, Spanish, and English as a Second Language (ESL) to learners worldwide, Cherice Parsotan brings a wealth of linguistic expertise and cultural awareness to every class. She holds a Bachelor's degree in Spanish and French and has worked with students across a wide range of ages, goals, and educational backgrounds.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                Cherice's teaching philosophy is both innovative and student-centered, blending proven language acquisition techniques with interactive, real-world learning experiences. Her classes are designed to help students not only grasp grammar and vocabulary but also gain the confidence and fluency to communicate naturally in diverse settings.
+              </p>
+              <p className="text-body-md text-gray-800 leading-[30px]">
+                As an Education Consultant with Canstudy Consulting Ltd., Cherice combines her deep understanding of language learning with her knowledge of international education pathways — making her an exceptional mentor for students who aspire to study, work, or thrive in multilingual environments.
+              </p>
+            </div>
           )}
         </div>
       ),

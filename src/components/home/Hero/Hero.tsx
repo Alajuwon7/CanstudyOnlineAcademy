@@ -102,7 +102,7 @@ export const Hero: React.FC = () => {
               className="text-center lg:text-left"
             >
               <h1 className="text-[32px] md:text-[48px] lg:text-[60px] font-primary font-bold mb-4 md:mb-6 leading-tight">
-                Learn the Skills the World Needs Now.
+                Learn the Skills<br className="md:hidden" />{' '}the World Needs Now.
               </h1>
               <p className="text-body-md md:text-body-lg text-white/80 mb-6 md:mb-8 px-2 md:px-0">
                 Future-proof your career with Canstudy Online Academy. Gain in-demand skills, global insights, and mentorship from industry leaders — all from the comfort of home.

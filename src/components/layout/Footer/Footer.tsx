@@ -169,7 +169,7 @@ export const Footer: React.FC = () => {
                   href="https://wa.me/16478951747"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-body-md text-accent font-semibold flex items-center gap-2"
+                  className="text-body-md text-accent font-semibold flex items-center gap-2 justify-center md:justify-start"
                 >
                   <FaWhatsapp />
                   647-895-1747
@@ -179,7 +179,7 @@ export const Footer: React.FC = () => {
                 <p className="text-body-sm text-white/60 mb-1">Toll Free</p>
                 <a
                   href="tel:+18664763433"
-                  className="text-body-md text-accent font-semibold flex items-center gap-2"
+                  className="text-body-md text-accent font-semibold flex items-center gap-2 justify-center md:justify-start"
                 >
                   <FiPhone />
                   +1-866-476-3433
@@ -189,7 +189,7 @@ export const Footer: React.FC = () => {
                 <p className="text-body-sm text-white/60 mb-1">Need support?</p>
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-body-md text-white/80 hover:text-accent transition-colors flex items-center gap-2"
+                  className="text-body-md text-white/80 hover:text-accent transition-colors flex items-center gap-2 justify-center md:justify-start"
                 >
                   <FiMail />
                   {CONTACT_INFO.email}

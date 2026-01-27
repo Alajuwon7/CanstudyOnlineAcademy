@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
                 sizes="(max-width: 768px) 160px, 192px"
               />
             </div>
-            <span className="font-primary font-bold text-lg md:text-xl text-secondary-blue-dark transition-colors whitespace-nowrap">
+            <span className="hidden md:inline font-primary font-bold text-lg md:text-xl text-secondary-blue-dark transition-colors whitespace-nowrap">
               Canstudy Online Academy
             </span>
           </Link>
