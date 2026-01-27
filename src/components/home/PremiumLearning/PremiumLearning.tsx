@@ -110,7 +110,7 @@ export const PremiumLearning: React.FC = () => {
 
             {/* Learn More button */}
             <Link
-              href="/courses"
+              href="/about"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold text-body-md md:text-body-lg px-6 py-3 md:px-8 md:py-4 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent shadow-button"
             >
               Learn More

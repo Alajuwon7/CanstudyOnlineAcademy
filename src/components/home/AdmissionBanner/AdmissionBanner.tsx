@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 
 export interface AdmissionBannerProps {
@@ -49,8 +50,8 @@ export const AdmissionBanner: React.FC<AdmissionBannerProps> = ({
           {/* Actions */}
           <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 lg:gap-[24.78px] shrink-0 w-full md:w-auto">
             {/* Button - Black with rounded-full */}
-            <button
-              onClick={onButtonClick}
+            <Link
+              href="/courses"
               className="bg-black border-2 border-transparent flex items-center justify-center rounded-full shadow-button hover:bg-black/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black w-full sm:w-auto"
             >
               <div className="flex items-center overflow-clip py-3 md:py-[14px] md:pb-[15px] px-6 md:px-[38px] rounded-[inherit]">
@@ -61,7 +62,7 @@ export const AdmissionBanner: React.FC<AdmissionBannerProps> = ({
                   <FiArrowRight className="text-white text-base md:text-[17px] scale-y-[-1]" />
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
