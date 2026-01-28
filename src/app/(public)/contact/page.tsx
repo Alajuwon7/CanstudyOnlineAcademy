@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { Section } from '@/components/layout/Section';
 import { CONTACT_INFO, SOCIAL_LINKS } from '@/lib/constants';
-import { FiPhone, FiMail, FiMapPin, FiUsers, FiInstagram, FiFacebook, FiLinkedin } from 'react-icons/fi';
-import { FaTiktok } from 'react-icons/fa';
+import { FiPhone, FiMail, FiMapPin, FiUsers } from 'react-icons/fi';
+import { FaFacebook, FaTiktok, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function ContactPage() {
   return (
@@ -115,46 +115,43 @@ export default function ContactPage() {
               </h3>
             </div>
             <div className="h-px bg-gray-200 mb-3"></div>
-            <div className="space-y-2">
-              <a
-                href={SOCIAL_LINKS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-body-md text-text-secondary hover:text-accent transition-colors group"
-              >
-                <FiInstagram className="text-xl text-text-primary group-hover:text-accent transition-colors" />
-                <span>
-                  Instagram: <span className="font-medium">{CONTACT_INFO.social.instagram}</span>
-                </span>
-              </a>
+            <div className="flex gap-4 justify-center md:justify-start">
               <a
                 href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-body-md text-text-secondary hover:text-accent transition-colors group"
+                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+                aria-label="Visit our Facebook page"
               >
-                <FiFacebook className="text-xl text-text-primary group-hover:text-accent transition-colors" />
-                <span>
-                  Facebook: <span className="font-medium">{CONTACT_INFO.social.facebook}</span>
-                </span>
+                <FaFacebook />
+              </a>
+              <a
+                href={SOCIAL_LINKS.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+                aria-label="Visit our TikTok page"
+              >
+                <FaTiktok />
+              </a>
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+                aria-label="Visit our Instagram page"
+              >
+                <FaInstagram />
               </a>
               <a
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-body-md text-text-secondary hover:text-accent transition-colors group"
+                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+                aria-label="Visit our LinkedIn page"
               >
-                <FiLinkedin className="text-xl text-text-primary group-hover:text-accent transition-colors" />
-                <span>
-                  Linkedin: <span className="font-medium">{CONTACT_INFO.social.linkedin}</span>
-                </span>
+                <FaLinkedin />
               </a>
-              <div className="flex items-center gap-3 text-body-md text-text-secondary">
-                <FaTiktok className="text-xl text-text-primary" />
-                <span>
-                  TikTok: <span className="font-medium">{CONTACT_INFO.social.tiktok}</span>
-                </span>
-              </div>
             </div>
           </div>
         </div>
