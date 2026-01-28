@@ -110,10 +110,33 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
 
           <div className="pt-10 pb-6">
             <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
-              Benefits of doing the program
+              {course.id === '2' ? 'Benefits of This Course' : 'Benefits of doing the program'}
             </h3>
             <ul className="space-y-2">
-              {course.id === '3' ? (
+              {course.id === '2' ? (
+                <>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Learn both the career and business side of international education recruitment.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Build a globally transferable education consulting business not limited by borders.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Gain compliance-safe training that protects you, your clients, and partner institutions.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Create a remote-friendly, flexible career that allows you to work from anywhere in the world.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Develop income-generating skills that empower you to help students and families access global education opportunities.</span>
+                  </li>
+                </>
+              ) : course.id === '3' ? (
                 <>
                   <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
                     <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
@@ -179,7 +202,45 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             </ul>
           </div>
 
-          {course.id === '3' ? (
+          {course.id === '2' ? (
+            <>
+              <div className="pt-10 pb-6">
+                <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                  Who This Course Is For
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Aspiring and established education consultants</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Recruitment agents seeking to expand globally</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Entrepreneurs entering the international education sector</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>School counselors, advisors, and administrators</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Professionals transitioning into education-based business roles</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-10 pb-6">
+                <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                  Important Note
+                </h3>
+                <p className="text-body-md text-gray-800 leading-[30px]">
+                  This professional development program is open to participants worldwide. The training does not provide immigration or legal advice. All study permit and visa discussions are contextual, based on publicly available government information.
+                </p>
+              </div>
+            </>
+          ) : course.id === '3' ? (
             <div className="pt-10 pb-6">
               <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
                 Who This Course Is For
@@ -203,16 +264,7 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                 </li>
               </ul>
             </div>
-          ) : (
-            <div className="pt-10 pb-6">
-              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
-                Important Note
-              </h3>
-              <p className="text-body-md text-gray-800 leading-[30px]">
-                This professional development program is open to participants worldwide. The training does not provide immigration or legal advice. All study permit and visa discussions are contextual, based on publicly available government information.
-              </p>
-            </div>
-          )}
+          ) : null}
         </div>
       ),
     },
