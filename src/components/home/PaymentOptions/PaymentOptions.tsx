@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { FiCheck } from 'react-icons/fi';
 
 const PAYMENT_LOGOS = {
-  klarna: 'https://cdn.simpleicons.org/klarna/0A0A0A',
-  affirm: 'https://cdn.simpleicons.org/affirm/000000',
-  afterpay: 'https://cdn.simpleicons.org/afterpay/000000',
+  klarna: 'https://res.cloudinary.com/kingaat7/image/upload/v1770142074/Klarna_hwp2ns.png',
+  affirm: 'https://res.cloudinary.com/kingaat7/image/upload/v1770142074/Affirm_lm3nut.png',
+  afterpay: 'https://res.cloudinary.com/kingaat7/image/upload/v1770142074/Afterpay_ao2ktw.png',
 } as const;
 
 export const PaymentOptions: React.FC = () => {
