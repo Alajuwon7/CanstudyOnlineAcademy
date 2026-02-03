@@ -13,7 +13,6 @@ import {
   FiAward,
   FiPlay,
   FiArrowRight,
-  FiCalendar,
   FiVideo,
   FiFlag,
   FiCreditCard,
@@ -116,6 +115,21 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               </div>
               <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
                 {course.duration || '3 weeks'}
+              </span>
+            </div>
+
+            {/* Time */}
+            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
+              <div className="flex items-center">
+                <div className="pr-[10px] flex items-center justify-center">
+                  <FiClock className="text-primary text-[20px]" />
+                </div>
+                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                  Time
+                </span>
+              </div>
+              <span className="text-[17px] font-normal text-text-secondary leading-[30px] text-right">
+                {course.id === '2' || course.id === '3' ? '11:00 AM - 1:00 PM EST' : '6:00 PM - 7:30 PM EST'}
               </span>
             </div>
 

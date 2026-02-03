@@ -403,6 +403,7 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
     {
       id: 'payment',
       label: 'Payment Options',
+      href: '/payment-options',
       content: (
         <div className="pt-6">
           <p className="text-body-md text-gray-800 leading-[30px] mb-4">

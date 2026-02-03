@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Section } from '@/components/layout/Section';
 import { CourseGrid } from '@/components/course/CourseGrid';
+import { WeAcceptStrip } from '@/components/home/PaymentOptions/WeAcceptStrip';
 import { COURSE_CATEGORIES } from '@/lib/constants';
 import { Course } from '@/types/course';
 import { getCourses } from '@/lib/api';
@@ -60,6 +61,10 @@ export const PopularCourses: React.FC = () => {
       </div>
 
       <CourseGrid courses={filteredCourses} />
+
+      <div className="mt-10 md:mt-12 max-w-4xl mx-auto">
+        <WeAcceptStrip />
+      </div>
     </Section>
   );
 };
