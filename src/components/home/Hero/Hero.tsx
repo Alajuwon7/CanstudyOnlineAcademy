@@ -107,15 +107,27 @@ export const Hero: React.FC = () => {
               <p className="text-body-md md:text-body-lg text-white/80 mb-6 md:mb-8 px-2 md:px-0">
                 Future-proof your career with Canstudy Online Academy. Gain in-demand skills, global insights, and mentorship from industry leaders — all from the comfort of home.
               </p>
-              <Link href="/courses">
-                <Button
-                  variant="accent"
-                  size="lg"
-                  className="flex items-center gap-2 mx-auto lg:mx-0 w-fit"
-                >
-                  View Courses
-                </Button>
-              </Link>
+              <div className="flex flex-wrap items-center gap-3 justify-center lg:justify-start">
+                <Link href="/courses">
+                  <Button
+                    variant="accent"
+                    size="lg"
+                    className="flex items-center gap-2 w-fit"
+                  >
+                    View Courses
+                  </Button>
+                </Link>
+                <Link href="/payment-options">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="lg"
+                    className="flex items-center gap-2 w-fit border-2 border-white/60 text-white hover:bg-white/10 hover:border-white"
+                  >
+                    Payment Options
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             <motion.div

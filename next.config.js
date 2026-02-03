@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.figma.com', 'res.cloudinary.com'],
+    domains: ['www.figma.com', 'res.cloudinary.com', 'cdn.simpleicons.org'],
     remotePatterns: [
       {
         protocol: 'https',
