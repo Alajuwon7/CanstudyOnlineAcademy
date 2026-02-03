@@ -68,7 +68,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                   <FiClock className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
                 </div>
                 <span className="font-medium">
-                  {course.id === '2' || course.id === '3' ? '11:00 AM - 1:00 PM EST' : '6:30 PM - 7:30 PM EST'}
+                  {course.id === '2' || course.id === '3' ? '11:00 AM - 1:00 PM EST' : '6:00 PM - 7:30 PM EST'}
                 </span>
               </div>
               <div className="flex items-center gap-2">
