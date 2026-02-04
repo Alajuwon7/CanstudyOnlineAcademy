@@ -190,12 +190,12 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
           <a
             href={
               course.id === '1'
-                ? 'https://form.jotform.com/canstudy_consult/french'
+                ? 'https://form.jotform.com/260338022159149'
                 : course.id === '2'
                 ? 'https://form.jotform.com/canstudy_consult/ger'
                 : course.id === '3'
                 ? 'https://form.jotform.com/canstudy_consult/irss'
-                : 'https://form.jotform.com/canstudy_consult/french'
+                : 'https://form.jotform.com/260338022159149'
             }
             target="_blank"
             rel="noopener noreferrer"
