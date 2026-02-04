@@ -126,18 +126,18 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/courses?category=business"
+                  href="/courses?category=languages"
                   className="text-body-md text-white/80 hover:text-accent transition-colors"
                 >
-                  Business finance
+                  Languages
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/courses?category=design"
+                  href="/courses?category=business"
                   className="text-body-md text-white/80 hover:text-accent transition-colors"
                 >
-                  Advanced design
+                  Business
                 </Link>
               </li>
               <li>
@@ -145,15 +145,7 @@ export const Footer: React.FC = () => {
                   href="/courses?category=development"
                   className="text-body-md text-white/80 hover:text-accent transition-colors"
                 >
-                  Web development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/courses?category=data"
-                  className="text-body-md text-white/80 hover:text-accent transition-colors"
-                >
-                  Data visualization
+                  Development
                 </Link>
               </li>
             </ul>
