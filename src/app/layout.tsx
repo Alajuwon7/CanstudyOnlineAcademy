@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AdmissionBanner } from '@/components/home/AdmissionBanner';
 import { FAQCarousel } from '@/components/home/FAQCarousel';
+import { FormModal } from '@/components/ui/FormModal';
 import '@/styles/design-tokens.css';
 import './globals.css';
 
@@ -115,6 +116,7 @@ export default function RootLayout({
         </Script>
         <Header />
         <main className="min-h-screen overflow-x-hidden">{children}</main>
+        <FormModal />
         <AdmissionBanner />
         <FAQCarousel />
         <Footer />
