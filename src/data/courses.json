@@ -92,5 +92,36 @@
       "Build an Independent Business"
     ],
     "relatedCourses": ["2"]
+  },
+  {
+    "id": "4",
+    "title": "CELPIP 2-Day Bootcamp",
+    "description": "2-day intensive CELPIP test preparation bootcamp focused on Listening, Reading, Writing, and Speaking strategies.",
+    "fullDescription": "The CELPIP Bootcamp is a fast-track, live online training program created for intermediate English speakers who want structured, exam-focused preparation in a short timeframe. Over two intensive sessions, students will understand CELPIP scoring criteria, master answering frameworks for Writing and Speaking, improve time management, practice exam-style questions with guided correction, and receive direct feedback to correct weaknesses quickly.",
+    "category": "Academic",
+    "instructor": {
+      "id": "3",
+      "name": "Monique Myers",
+      "avatar": "https://res.cloudinary.com/kingaat7/image/upload/v1769404443/MMInstructImage_orfcbz.png"
+    },
+    "price": 100,
+    "enrolledStudents": 0,
+    "lessons": 4,
+    "language": "English",
+    "duration": "2 Days",
+    "days": "Tuesday - Wednesday",
+    "rating": 0,
+    "reviews": 0,
+    "image": "https://res.cloudinary.com/kingaat7/image/upload/v1772477583/COAPicsCourse-10_yaeaei.png",
+    "tags": ["CELPIP", "Test Preparation", "Academic", "Bootcamp", "Intermediate"],
+    "featured": true,
+    "whatYoullLearn": [
+      "Apply effective listening techniques to capture key details quickly",
+      "Navigate reading passages with improved speed and comprehension accuracy",
+      "Structure high-scoring writing responses using tested templates",
+      "Deliver confident, well-organized speaking responses under time pressure",
+      "Understand how CELPIP is evaluated and how to meet scoring benchmarks"
+    ],
+    "relatedCourses": ["2", "3"]
   }
 ]

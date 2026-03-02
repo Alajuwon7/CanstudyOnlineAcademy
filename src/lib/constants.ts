@@ -13,6 +13,7 @@ export const COURSE_CATEGORIES = [
   { id: 'development', name: 'Development', slug: 'development' },
   { id: 'business', name: 'Business', slug: 'business' },
   { id: 'languages', name: 'Languages', slug: 'languages' },
+  { id: 'academic', name: 'Academic', slug: 'academic' },
 ];
 
 export const SOCIAL_LINKS = {

@@ -24,7 +24,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             />
           </div>
           <div className="absolute top-4 right-4">
-            <Badge variant="price">{course.id === '1' ? 'Beginner' : 'All Levels'}</Badge>
+            <Badge variant="price">
+              {course.id === '1' ? 'Beginner' : course.id === '4' ? 'Intermediate' : 'All Levels'}
+            </Badge>
           </div>
         </div>
         <div className="p-4 md:p-6">
@@ -58,7 +60,15 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                 <FiVideo className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
               </div>
               <span className="font-medium">
-                {course.id === '1' ? 'Mondays - Wednesdays - Thursdays' : course.id === '2' ? 'Thursdays' : course.id === '3' ? 'Tuesdays' : 'Mon. Wed. Thur.'}
+                {course.id === '1'
+                  ? 'Mondays - Wednesdays - Thursdays'
+                  : course.id === '2'
+                  ? 'Thursdays'
+                  : course.id === '3'
+                  ? 'Tuesdays'
+                  : course.id === '4'
+                  ? 'Tuesday - Wednesday'
+                  : 'Mon. Wed. Thur.'}
               </span>
             </div>
             {/* Second row: Clock icon with time and Calendar icon with duration */}

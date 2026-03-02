@@ -42,6 +42,23 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                     The program emphasizes compliance, professional integrity, and remote career readiness, ensuring every graduate operates confidently and lawfully in a support capacity within the global immigration ecosystem.
                   </p>
                 </>
+              ) : course.id === '4' ? (
+                <>
+                  <p>
+                    The CELPIP Bootcamp is a fast-track, live online training program created for intermediate English speakers who want structured, exam-focused preparation in a short timeframe.
+                  </p>
+                  <p>Over two intensive sessions, students will:</p>
+                  <ul className="space-y-1 pl-5 list-disc">
+                    <li>Understand CELPIP scoring criteria and examiner expectations</li>
+                    <li>Master proven answering frameworks for Writing and Speaking tasks</li>
+                    <li>Improve time management and strategic test navigation</li>
+                    <li>Practice real exam-style questions with guided correction</li>
+                    <li>Receive direct feedback to correct weaknesses quickly</li>
+                  </ul>
+                  <p>
+                    This academic preparation course focuses on performance optimization — helping you avoid common pitfalls and increase score consistency.
+                  </p>
+                </>
               ) : (
                 <p>
                   This course focuses on building a foundational understanding of the French language while gaining exposure to French culture, sounds, and pronunciation. The course covers basic grammar (gender, verb conjugation patterns, word order in sentences and questions), vocabulary and essential concepts needed for effective communication in everyday situations. The course also delves into intermediate grammatical structures and vocabulary needed to provide more detailed information in a given situation.
@@ -52,7 +69,9 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
 
           <div className="pt-10 pb-6">
             <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
-              What you'll learn from this course
+              {course.id === '4'
+                ? 'By the end of this bootcamp, you will:'
+                : "What you'll learn from this course"}
             </h3>
             <ul className="space-y-2">
               {course.whatYoullLearn && course.whatYoullLearn.length > 0 ? (
@@ -110,7 +129,11 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
 
           <div className="pt-10 pb-6">
             <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
-              {course.id === '2' ? 'Benefits of This Course' : 'Benefits of doing the program'}
+              {course.id === '2'
+                ? 'Benefits of This Course'
+                : course.id === '4'
+                ? 'Benefits of This Bootcamp'
+                : 'Benefits of doing the program'}
             </h3>
             <ul className="space-y-2">
               {course.id === '2' ? (
@@ -157,6 +180,29 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                   <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
                     <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
                     <span>Earn a Certificate of Completion from Canstudy Online Academy, recognized for professional credibility.</span>
+                  </li>
+                </>
+              ) : course.id === '4' ? (
+                <>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Intensive preparation in just 2 days</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Real-time instruction and interaction</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Practical scoring strategies (not theory)</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Confidence-building practice under timed conditions</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                    <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                    <span>Personalized guidance from an experienced educator</span>
                   </li>
                 </>
               ) : (
@@ -264,6 +310,52 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                 </li>
               </ul>
             </div>
+          ) : course.id === '4' ? (
+            <div className="pt-10 pb-6">
+              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                Who This Course Is For
+              </h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Individuals preparing for Canadian Permanent Residency</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Test takers who previously scored below the target</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Professionals requiring CELPIP for immigration or licensing</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Students needing structured, short-term exam preparation</span>
+                </li>
+              </ul>
+            </div>
+            <div className="pt-10 pb-6">
+              <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
+                Student Resources
+              </h3>
+              <p className="text-body-md text-gray-800 leading-[30px] mb-3">
+                All enrolled students receive:
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Access to recordings</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Study guide material</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-md text-gray-800 leading-[30px]">
+                  <FiCheck className="text-accent text-xl flex-shrink-0 mt-1.5" />
+                  <span>Course slides</span>
+                </li>
+              </ul>
+            </div>
           ) : null}
         </div>
       ),
@@ -277,6 +369,55 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             <p className="text-body-md text-gray-800 leading-[30px]">
               Course content will be provided upon enrollment completion.
             </p>
+          ) : course.id === '4' ? (
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
+                  Day 1 – Listening & Reading Mastery
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Overview of CELPIP exam format</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Listening strategies for identifying keywords and traps</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Reading techniques for speed, inference, and accuracy</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Timed practice session with instructor breakdown</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-heading-2 font-semibold text-black mb-3 tracking-[-0.5px]">
+                  Day 2 – Writing & Speaking Excellence
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Writing task structure templates (Email & Survey responses)</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Common grammar and clarity mistakes to avoid</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Speaking response frameworks for each task type</span>
+                  </li>
+                  <li className="flex items-baseline gap-2">
+                    <span className="text-accent text-lg leading-none">•</span>
+                    <span className="text-body-md text-gray-800">Live mock practice and corrective feedback</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           ) : (
             <div className="space-y-8">
               {/* Level 1 */}
@@ -350,7 +491,7 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
       label: 'Instructor',
       content: (
         <div className="pt-6">
-          {course.id === '2' || course.id === '3' ? (
+          {course.id === '2' || course.id === '3' || course.id === '4' ? (
             <div className="space-y-4">
               <h3 className="text-heading-2 font-semibold text-black mb-4 tracking-[-0.5px]">
                 Meet Your Instructor: Mrs. Monique Myers
@@ -362,8 +503,10 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
                 International Education Consultant | RCIC #R731184
               </p>
               <p className="text-body-md text-gray-800 leading-[30px]">
-                {course.id === '2' 
+                {course.id === '2'
                   ? 'With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the Global Education Recruiter Training Program.'
+                  : course.id === '4'
+                  ? 'With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the CELPIP 2-Day Bootcamp.'
                   : 'With over 8 years of experience in Canadian university administration and a proven track record of helping students and professionals navigate global education systems, Monique Myers brings real-world expertise and leadership to the Immigration Recruitment & Support Specialist™ Training Program.'}
               </p>
               <p className="text-body-md text-gray-800 leading-[30px]">
@@ -375,6 +518,8 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
               <p className="text-body-md text-gray-800 leading-[30px]">
                 {course.id === '2'
                   ? 'Today, Monique is recognized for her practical, ethics-driven approach to education recruitment and her commitment to preparing the next generation of professionals to thrive in the global education industry.'
+                  : course.id === '4'
+                  ? 'Today, Monique is recognized for her practical, ethics-driven approach to test preparation and her commitment to helping learners achieve their immigration and academic goals through focused, results-driven training.'
                   : 'Today, Monique is recognized for her practical, ethics-driven approach to immigration recruitment and her commitment to preparing the next generation of professionals to thrive in the global immigration industry.'}
               </p>
             </div>
@@ -432,7 +577,7 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
           src={course.image}
           alt={course.title}
           fill
-          className="object-cover"
+          className={`object-cover ${course.id === '4' ? 'object-top' : ''}`}
         />
       </div>
 
@@ -452,6 +597,11 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             Compliance-Focused. Career-Driven. Globally Accessible.
           </h2>
         )}
+        {course.id === '4' && (
+          <h2 className="text-heading-1 font-semibold text-black mb-4 tracking-[-0.5px]">
+            Focused. Strategic. Results-Driven.
+          </h2>
+        )}
         <div className="text-body-md text-gray-800 leading-[30px]">
           {course.id === '2' ? (
             <p>
@@ -461,6 +611,18 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             <p>
               Launch a legitimate career in the global immigration industry — no license required. This professional, instructor-led program trains you to ethically recruit and support clients for licensed RCICs and immigration lawyers while managing your own independent business. Through live classes, real-world templates, and compliance-based training, you'll gain the knowledge, confidence, and systems to operate as a trusted Immigration Recruitment & Support Specialist™ anywhere in the world.
             </p>
+          ) : course.id === '4' ? (
+            <>
+              <p>
+                Prepare with clarity and confidence in this intensive 2-day CELPIP Bootcamp designed to help you maximize your score efficiently. Whether you’re taking the CELPIP for permanent residency, professional requirements, or academic advancement, this live training will equip you with targeted strategies across Listening, Reading, Writing, and Speaking.
+              </p>
+              <p>
+                Through real test simulations, structured feedback, and practical techniques taught by an experienced instructor, you’ll strengthen your performance under timed conditions and walk into your exam fully prepared.
+              </p>
+              <p>
+                This isn’t generic preparation — it’s focused training designed for measurable results.
+              </p>
+            </>
           ) : (
             <p>
               Discover how learning French can open global doors — from career advancement and travel to international networking and education. In this interactive course, you'll build fluency through real conversations, cultural insights, and live guidance from expert instructors. No matter your background or goals, you'll gain the confidence to communicate, connect, and stand out in a multilingual world.

@@ -65,23 +65,25 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
           ) : (
             <div className="w-full h-full bg-gray-200" />
           )}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <a
-              href={
-                course.id === '2'
-                  ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBfsYGHTzMMT65PQUaVPm45AYN-adCSSOEKyRRPFLh_Jdw?e=oeHcc5'
-                  : course.id === '3'
-                  ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBeDgeyZWeKSqGhYphHv1d_AUxCeYAlwIIQiCzHjyw4GFQ?e=ut8dwO'
-                  : 'https://youtu.be/zLJCJQI1lVU'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Play course overview video"
-              className="w-[70px] h-[70px] rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors shadow-lg"
-            >
-              <FiPlay className="text-primary text-xl ml-1" />
-            </a>
-          </div>
+          {course.id !== '4' && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              <a
+                href={
+                  course.id === '2'
+                    ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBfsYGHTzMMT65PQUaVPm45AYN-adCSSOEKyRRPFLh_Jdw?e=oeHcc5'
+                    : course.id === '3'
+                    ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBeDgeyZWeKSqGhYphHv1d_AUxCeYAlwIIQiCzHjyw4GFQ?e=ut8dwO'
+                    : 'https://youtu.be/zLJCJQI1lVU'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Play course overview video"
+                className="w-[70px] h-[70px] rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors shadow-lg"
+              >
+                <FiPlay className="text-primary text-xl ml-1" />
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Course Details */}
@@ -99,7 +101,15 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 </span>
               </div>
               <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
-                {course.id === '1' ? 'Feb. 9th, 2026' : course.id === '2' ? 'March 12th, 2026' : course.id === '3' ? 'March 10th, 2026' : 'Feb. 9th, 2026'}
+                {course.id === '1'
+                  ? 'Feb. 9th, 2026'
+                  : course.id === '2'
+                  ? 'March 12th, 2026'
+                  : course.id === '3'
+                  ? 'March 10th, 2026'
+                  : course.id === '4'
+                  ? 'March 17 & 18, 2026'
+                  : 'Feb. 9th, 2026'}
               </span>
             </div>
 
@@ -129,7 +139,11 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 </span>
               </div>
               <span className="text-[17px] font-normal text-text-secondary leading-[30px] text-right">
-                {course.id === '2' || course.id === '3' ? '11:00 AM - 1:00 PM EST' : '6:00 PM - 7:30 PM EST'}
+                {course.id === '2' || course.id === '3'
+                  ? '11:00 AM - 1:00 PM EST'
+                  : course.id === '4'
+                  ? '6:30 PM - 8:00 PM EDT'
+                  : '6:00 PM - 7:30 PM EST'}
               </span>
             </div>
 
@@ -186,30 +200,40 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
             </p>
           </div>
 
-          {/* Enroll Button */}
-          <a
-            href={
-              course.id === '1'
-                ? 'https://form.jotform.com/260338022159149'
-                : course.id === '2'
-                ? 'https://form.jotform.com/canstudy_consult/ger'
-                : course.id === '3'
-                ? 'https://form.jotform.com/canstudy_consult/irss'
-                : 'https://form.jotform.com/260338022159149'
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent border-2 border-transparent rounded-full flex items-center justify-center overflow-clip hover:opacity-90 transition-opacity"
-          >
-            <div className="flex items-center pb-[15px] pt-[14px] px-[38px] rounded-[inherit]">
-              <div className="pr-[6px] pb-[5.5px] pt-[3px]">
-                <FiArrowRight className="text-[17px] text-white scale-y-[-100%]" />
+          {/* Enroll / Enrollment status */}
+          {course.id === '1' ? (
+            <div className="bg-gray-300 border-2 border-transparent rounded-full flex items-center justify-center overflow-clip cursor-not-allowed">
+              <div className="flex items-center pb-[15px] pt-[14px] px-[38px] rounded-[inherit]">
+                <span className="text-[17px] font-semibold text-gray-700 leading-[25.5px] text-center">
+                  Enrollment closed
+                </span>
               </div>
-              <span className="text-[17px] font-semibold text-white leading-[25.5px] text-center">
-                Enroll now
-              </span>
             </div>
-          </a>
+          ) : (
+            <a
+              href={
+                course.id === '2'
+                  ? 'https://form.jotform.com/canstudy_consult/ger'
+                  : course.id === '3'
+                  ? 'https://form.jotform.com/canstudy_consult/irss'
+                  : course.id === '4'
+                  ? 'https://form.jotform.com/canstudy_consult/celpip'
+                  : 'https://form.jotform.com/260338022159149'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-accent border-2 border-transparent rounded-full flex items-center justify-center overflow-clip hover:opacity-90 transition-opacity"
+            >
+              <div className="flex items-center pb-[15px] pt-[14px] px-[38px] rounded-[inherit]">
+                <div className="pr-[6px] pb-[5.5px] pt-[3px]">
+                  <FiArrowRight className="text-[17px] text-white scale-y-[-100%]" />
+                </div>
+                <span className="text-[17px] font-semibold text-white leading-[25.5px] text-center">
+                  Enroll now
+                </span>
+              </div>
+            </a>
+          )}
 
           {/* Social Sharing */}
           <div className="flex items-center gap-4 justify-center">

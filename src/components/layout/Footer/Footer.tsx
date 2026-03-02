@@ -148,6 +148,14 @@ export const Footer: React.FC = () => {
                   Development
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/courses?category=academic"
+                  className="text-body-md text-white/80 hover:text-accent transition-colors"
+                >
+                  Academic
+                </Link>
+              </li>
             </ul>
           </div>
 
