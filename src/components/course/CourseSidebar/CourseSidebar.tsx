@@ -28,34 +28,34 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
     <div className="sticky top-24 space-y-5">
       {/* Video Thumbnail */}
       <Card variant="sidebar" className="overflow-hidden rounded-md bg-gray-100 p-0">
-        <div className="relative h-[220px] w-full">
-          {course.id === '1' ? (
-            <Image
-              src="https://img.youtube.com/vi/zLJCJQI1lVU/hqdefault.jpg"
-              alt={`${course.title} – Course overview video`}
-              fill
-              className="object-cover"
-            />
-          ) : course.id === '2' ? (
-            <Image
-              src="https://res.cloudinary.com/kingaat7/image/upload/v1769526126/2_d8ln3t.png"
-              alt={`${course.title} – Course overview video`}
-              fill
-              className="object-cover"
-            />
-          ) : course.id === '3' ? (
-            <Image
-              src="https://res.cloudinary.com/kingaat7/image/upload/v1769526126/3_p0g65t.png"
-              alt={`${course.title} – Course overview video`}
-              fill
-              className="object-cover"
-            />
-          ) : course.videoThumbnail ? (
-            <Image src={course.videoThumbnail} alt={course.title} fill className="object-cover" />
-          ) : (
-            <div className="h-full w-full bg-gray-200" />
-          )}
-          {course.id !== '4' && (
+        {course.id !== '4' && (
+          <div className="relative h-[220px] w-full">
+            {course.id === '1' ? (
+              <Image
+                src="https://img.youtube.com/vi/zLJCJQI1lVU/hqdefault.jpg"
+                alt={`${course.title} – Course overview video`}
+                fill
+                className="object-cover"
+              />
+            ) : course.id === '2' ? (
+              <Image
+                src="https://res.cloudinary.com/kingaat7/image/upload/v1769526126/2_d8ln3t.png"
+                alt={`${course.title} – Course overview video`}
+                fill
+                className="object-cover"
+              />
+            ) : course.id === '3' ? (
+              <Image
+                src="https://res.cloudinary.com/kingaat7/image/upload/v1769526126/3_p0g65t.png"
+                alt={`${course.title} – Course overview video`}
+                fill
+                className="object-cover"
+              />
+            ) : course.videoThumbnail ? (
+              <Image src={course.videoThumbnail} alt={course.title} fill className="object-cover" />
+            ) : (
+              <div className="h-full w-full bg-gray-200" />
+            )}
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
               <a
                 href={
@@ -73,8 +73,8 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 <FiPlay className="ml-1 text-xl text-primary" />
               </a>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Course Details */}
         <div className="flex flex-col gap-5 p-[35px]">
