@@ -12,7 +12,7 @@ export interface CourseCardProps {
 
 export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   return (
-    <Card variant="course" className="group hover:shadow-lg transition-shadow">
+    <Card variant="course" className="group transition-shadow hover:shadow-lg">
       <Link href={`/courses/${course.id}`}>
         <div className="relative">
           <div className="relative h-48 w-full overflow-hidden">
@@ -20,23 +20,23 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               src={course.image}
               alt={course.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className={`object-cover transition-transform duration-300 group-hover:scale-105 ${course.id === '4' ? 'object-[center_30%]' : ''}`}
             />
           </div>
-          <div className="absolute top-4 right-4">
+          <div className="absolute right-4 top-4">
             <Badge variant="price">
               {course.id === '1' ? 'Beginner' : course.id === '4' ? 'Intermediate' : 'All Levels'}
             </Badge>
           </div>
         </div>
         <div className="p-4 md:p-6">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-3">
+          <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
             <Badge variant="category" className="w-fit">
               {course.id === '3' ? 'Prof. Development' : course.category}
             </Badge>
             <div className="flex items-center gap-2">
               {course.instructor.avatar && (
-                <div className="relative w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
+                <div className="relative h-6 w-6 flex-shrink-0 overflow-hidden rounded-full">
                   <Image
                     src={course.instructor.avatar}
                     alt={course.instructor.name}
@@ -45,45 +45,59 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                   />
                 </div>
               )}
-              <span className="text-body-xs text-text-secondary truncate">
+              <span className="truncate text-body-xs text-text-secondary">
                 {course.instructor.name}
               </span>
             </div>
           </div>
-          <h3 className="text-[18px] md:text-heading-2 font-semibold text-black mb-3 line-clamp-2 group-hover:text-primary transition-colors min-h-[56px]">
-            {course.title} {course.id === '1' && <span className="font-normal">(Beginner to Intermediate)</span>}
+          <h3 className="mb-3 line-clamp-2 min-h-[56px] text-[18px] font-semibold text-black transition-colors group-hover:text-primary md:text-heading-2">
+            {course.title}{' '}
+            {course.id === '1' && <span className="font-normal">(Beginner to Intermediate)</span>}
           </h3>
-          <div className="flex flex-col gap-3 md:gap-4 mb-4 text-body-xs md:text-body-sm text-gray-800">
+          <div className="mb-4 flex flex-col gap-3 text-body-xs text-gray-800 md:gap-4 md:text-body-sm">
             {/* First row: Webcam icon with days */}
             <div className="flex items-center gap-2">
-              <div className="w-5 h-5 rounded flex items-center justify-center bg-orange-500">
-                <FiVideo className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
+              <div className="flex h-5 w-5 items-center justify-center rounded bg-orange-500">
+                <FiVideo
+                  className="h-3 w-3"
+                  style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }}
+                />
               </div>
               <span className="font-medium">
                 {course.id === '1'
                   ? 'Mondays - Wednesdays - Thursdays'
                   : course.id === '2'
-                  ? 'Thursdays'
-                  : course.id === '3'
-                  ? 'Tuesdays'
-                  : course.id === '4'
-                  ? 'Tuesday - Wednesday'
-                  : 'Mon. Wed. Thur.'}
+                    ? 'Thursdays'
+                    : course.id === '3'
+                      ? 'Tuesdays'
+                      : course.id === '4'
+                        ? 'Tuesday - Wednesday'
+                        : 'Mon. Wed. Thur.'}
               </span>
             </div>
             {/* Second row: Clock icon with time and Calendar icon with duration */}
             <div className="flex flex-wrap items-center gap-3 md:gap-4">
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded flex items-center justify-center bg-orange-500">
-                  <FiClock className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
+                <div className="flex h-5 w-5 items-center justify-center rounded bg-orange-500">
+                  <FiClock
+                    className="h-3 w-3"
+                    style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }}
+                  />
                 </div>
                 <span className="font-medium">
-                  {course.id === '2' || course.id === '3' ? '11:00 AM - 1:00 PM EST' : '6:00 PM - 7:30 PM EST'}
+                  {course.id === '2' || course.id === '3'
+                    ? '11:00 AM - 1:00 PM EST'
+                    : course.id === '4'
+                      ? '6:30 PM - 8:00 PM EST'
+                      : '6:00 PM - 7:30 PM EST'}
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded flex items-center justify-center bg-orange-500">
-                  <FiCalendar className="w-3 h-3" style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }} />
+                <div className="flex h-5 w-5 items-center justify-center rounded bg-orange-500">
+                  <FiCalendar
+                    className="h-3 w-3"
+                    style={{ color: '#000000', stroke: '#000000', strokeWidth: 2 }}
+                  />
                 </div>
                 <span className="font-medium">{course.duration || '35 Weeks'}</span>
               </div>

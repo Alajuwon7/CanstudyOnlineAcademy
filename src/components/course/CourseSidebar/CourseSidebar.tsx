@@ -17,12 +17,7 @@ import {
   FiFlag,
   FiCreditCard,
 } from 'react-icons/fi';
-import {
-  FaFacebook,
-  FaTiktok,
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaFacebook, FaTiktok, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export interface CourseSidebarProps {
   course: Course;
@@ -32,7 +27,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
   return (
     <div className="sticky top-24 space-y-5">
       {/* Video Thumbnail */}
-      <Card variant="sidebar" className="p-0 overflow-hidden bg-gray-100 rounded-md">
+      <Card variant="sidebar" className="overflow-hidden rounded-md bg-gray-100 p-0">
         <div className="relative h-[220px] w-full">
           {course.id === '1' ? (
             <Image
@@ -56,14 +51,9 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               className="object-cover"
             />
           ) : course.videoThumbnail ? (
-            <Image
-              src={course.videoThumbnail}
-              alt={course.title}
-              fill
-              className="object-cover"
-            />
+            <Image src={course.videoThumbnail} alt={course.title} fill className="object-cover" />
           ) : (
-            <div className="w-full h-full bg-gray-200" />
+            <div className="h-full w-full bg-gray-200" />
           )}
           {course.id !== '4' && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
@@ -72,139 +62,139 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                   course.id === '2'
                     ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBfsYGHTzMMT65PQUaVPm45AYN-adCSSOEKyRRPFLh_Jdw?e=oeHcc5'
                     : course.id === '3'
-                    ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBeDgeyZWeKSqGhYphHv1d_AUxCeYAlwIIQiCzHjyw4GFQ?e=ut8dwO'
-                    : 'https://youtu.be/zLJCJQI1lVU'
+                      ? 'https://canstudyconsultcom-my.sharepoint.com/:v:/g/personal/info_canstudyconsult_com/IQBeDgeyZWeKSqGhYphHv1d_AUxCeYAlwIIQiCzHjyw4GFQ?e=ut8dwO'
+                      : 'https://youtu.be/zLJCJQI1lVU'
                 }
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Play course overview video"
-                className="w-[70px] h-[70px] rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors shadow-lg"
+                className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-white/90"
               >
-                <FiPlay className="text-primary text-xl ml-1" />
+                <FiPlay className="ml-1 text-xl text-primary" />
               </a>
             </div>
           )}
         </div>
 
         {/* Course Details */}
-        <div className="p-[35px] flex flex-col gap-5">
+        <div className="flex flex-col gap-5 p-[35px]">
           {/* Course Details List */}
           <div className="flex flex-col">
             {/* Start Date */}
-            <div className="border-b border-gray-200 pb-4 flex items-center justify-between">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4">
               <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiFlag className="text-primary text-[20px]" />
+                <div className="flex items-center justify-center pr-[10px]">
+                  <FiFlag className="text-[20px] text-primary" />
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                <span className="text-[17px] font-semibold leading-[30px] text-text-primary">
                   Start
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+              <span className="text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.id === '1'
                   ? 'Feb. 9th, 2026'
                   : course.id === '2'
-                  ? 'March 12th, 2026'
-                  : course.id === '3'
-                  ? 'March 10th, 2026'
-                  : course.id === '4'
-                  ? 'March 17 & 18, 2026'
-                  : 'Feb. 9th, 2026'}
+                    ? 'March 12th, 2026'
+                    : course.id === '3'
+                      ? 'March 10th, 2026'
+                      : course.id === '4'
+                        ? 'March 17 & 18, 2026'
+                        : 'Feb. 9th, 2026'}
               </span>
             </div>
 
             {/* Duration */}
-            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-[15px]">
               <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiClock className="text-primary text-[20px]" />
+                <div className="flex items-center justify-center pr-[10px]">
+                  <FiClock className="text-[20px] text-primary" />
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                <span className="text-[17px] font-semibold leading-[30px] text-text-primary">
                   Duration
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+              <span className="text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.duration || '3 weeks'}
               </span>
             </div>
 
             {/* Time */}
-            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-[15px]">
               <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiClock className="text-primary text-[20px]" />
+                <div className="flex items-center justify-center pr-[10px]">
+                  <FiClock className="text-[20px] text-primary" />
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                <span className="text-[17px] font-semibold leading-[30px] text-text-primary">
                   Time
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px] text-right">
+              <span className="text-right text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.id === '2' || course.id === '3'
                   ? '11:00 AM - 1:00 PM EST'
                   : course.id === '4'
-                  ? '6:30 PM - 8:00 PM EDT'
-                  : '6:00 PM - 7:30 PM EST'}
+                    ? '6:30 PM - 8:00 PM EST'
+                    : '6:00 PM - 7:30 PM EST'}
               </span>
             </div>
 
             {/* Format */}
-            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-[15px]">
               <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiVideo className="text-primary text-[20px]" />
+                <div className="flex items-center justify-center pr-[10px]">
+                  <FiVideo className="text-[20px] text-primary" />
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                <span className="text-[17px] font-semibold leading-[30px] text-text-primary">
                   Format
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+              <span className="text-[17px] font-normal leading-[30px] text-text-secondary">
                 Live - Video
               </span>
             </div>
 
             {/* Language */}
-            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-[15px]">
               <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiGlobe className="text-primary text-[20px]" />
+                <div className="flex items-center justify-center pr-[10px]">
+                  <FiGlobe className="text-[20px] text-primary" />
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                <span className="text-[17px] font-semibold leading-[30px] text-text-primary">
                   Language
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+              <span className="text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.language || 'English'}
               </span>
             </div>
 
             {/* Lessons */}
-            <div className="border-b border-gray-200 pb-4 pt-[15px] flex items-center justify-between">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-[15px]">
               <div className="flex items-center">
-                <div className="pr-[10px] flex items-center justify-center">
-                  <FiBook className="text-primary text-[20px]" />
+                <div className="flex items-center justify-center pr-[10px]">
+                  <FiBook className="text-[20px] text-primary" />
                 </div>
-                <span className="text-[17px] font-semibold text-text-primary leading-[30px]">
+                <span className="text-[17px] font-semibold leading-[30px] text-text-primary">
                   Lessons
                 </span>
               </div>
-              <span className="text-[17px] font-normal text-text-secondary leading-[30px]">
+              <span className="text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.lessons}
               </span>
             </div>
           </div>
 
           {/* Price Badge */}
-          <div className="bg-secondary-blue-dark rounded-full py-[10px] flex items-center justify-center">
-            <p className="text-[18px] font-medium text-white text-center leading-[34px]">
+          <div className="flex items-center justify-center rounded-full bg-secondary-blue-dark py-[10px]">
+            <p className="text-center text-[18px] font-medium leading-[34px] text-white">
               Price: {formatPrice(course.price)}
             </p>
           </div>
 
           {/* Enroll / Enrollment status */}
           {course.id === '1' ? (
-            <div className="bg-gray-300 border-2 border-transparent rounded-full flex items-center justify-center overflow-clip cursor-not-allowed">
-              <div className="flex items-center pb-[15px] pt-[14px] px-[38px] rounded-[inherit]">
-                <span className="text-[17px] font-semibold text-gray-700 leading-[25.5px] text-center">
+            <div className="flex cursor-not-allowed items-center justify-center overflow-clip rounded-full border-2 border-transparent bg-gray-300">
+              <div className="flex items-center rounded-[inherit] px-[38px] pb-[15px] pt-[14px]">
+                <span className="text-center text-[17px] font-semibold leading-[25.5px] text-gray-700">
                   Enrollment closed
                 </span>
               </div>
@@ -215,20 +205,20 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 course.id === '2'
                   ? 'https://form.jotform.com/canstudy_consult/ger'
                   : course.id === '3'
-                  ? 'https://form.jotform.com/canstudy_consult/irss'
-                  : course.id === '4'
-                  ? 'https://form.jotform.com/canstudy_consult/celpip'
-                  : 'https://form.jotform.com/260338022159149'
+                    ? 'https://form.jotform.com/canstudy_consult/irss'
+                    : course.id === '4'
+                      ? 'https://form.jotform.com/canstudy_consult/celpip'
+                      : 'https://form.jotform.com/260338022159149'
               }
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent border-2 border-transparent rounded-full flex items-center justify-center overflow-clip hover:opacity-90 transition-opacity"
+              className="flex items-center justify-center overflow-clip rounded-full border-2 border-transparent bg-accent transition-opacity hover:opacity-90"
             >
-              <div className="flex items-center pb-[15px] pt-[14px] px-[38px] rounded-[inherit]">
-                <div className="pr-[6px] pb-[5.5px] pt-[3px]">
-                  <FiArrowRight className="text-[17px] text-white scale-y-[-100%]" />
+              <div className="flex items-center rounded-[inherit] px-[38px] pb-[15px] pt-[14px]">
+                <div className="pb-[5.5px] pr-[6px] pt-[3px]">
+                  <FiArrowRight className="scale-y-[-100%] text-[17px] text-white" />
                 </div>
-                <span className="text-[17px] font-semibold text-white leading-[25.5px] text-center">
+                <span className="text-center text-[17px] font-semibold leading-[25.5px] text-white">
                   Enroll now
                 </span>
               </div>
@@ -236,12 +226,12 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
           )}
 
           {/* Social Sharing */}
-          <div className="flex items-center gap-4 justify-center">
+          <div className="flex items-center justify-center gap-4">
             <a
               href={SOCIAL_LINKS.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-text-primary transition-colors hover:bg-accent hover:text-white"
               aria-label="Visit our Facebook page"
             >
               <FaFacebook />
@@ -250,7 +240,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               href={SOCIAL_LINKS.tiktok}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-text-primary transition-colors hover:bg-accent hover:text-white"
               aria-label="Visit our TikTok page"
             >
               <FaTiktok />
@@ -259,7 +249,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-text-primary transition-colors hover:bg-accent hover:text-white"
               aria-label="Visit our Instagram page"
             >
               <FaInstagram />
@@ -268,7 +258,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-text-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-text-primary transition-colors hover:bg-accent hover:text-white"
               aria-label="Visit our LinkedIn page"
             >
               <FaLinkedin />
