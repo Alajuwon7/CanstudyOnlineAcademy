@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { Course } from '@/types/course';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 import { formatPrice } from '@/lib/utils';
 import { SOCIAL_LINKS } from '@/lib/constants';
 import {
@@ -92,7 +91,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               </div>
               <span className="text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.id === '1'
-                  ? 'Feb. 9th, 2026'
+                  ? 'June 8th, 2026'
                   : course.id === '2'
                     ? 'March 12th, 2026'
                     : course.id === '3'
@@ -129,11 +128,13 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                 </span>
               </div>
               <span className="text-right text-[17px] font-normal leading-[30px] text-text-secondary">
-                {course.id === '2' || course.id === '3'
-                  ? '11:00 AM - 1:00 PM EST'
-                  : course.id === '4'
-                    ? '6:30 PM - 8:00 PM EST'
-                    : '6:00 PM - 7:30 PM EST'}
+                {course.id === '1'
+                  ? '8:00 PM - 9:30 PM EST'
+                  : course.id === '2' || course.id === '3'
+                    ? '11:00 AM - 1:00 PM EST'
+                    : course.id === '4'
+                      ? '6:30 PM - 8:00 PM EST'
+                      : '6:00 PM - 7:30 PM EST'}
               </span>
             </div>
 
@@ -190,40 +191,32 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
             </p>
           </div>
 
-          {/* Enroll / Enrollment status */}
-          {course.id === '1' ? (
-            <div className="flex cursor-not-allowed items-center justify-center overflow-clip rounded-full border-2 border-transparent bg-gray-300">
-              <div className="flex items-center rounded-[inherit] px-[38px] pb-[15px] pt-[14px]">
-                <span className="text-center text-[17px] font-semibold leading-[25.5px] text-gray-700">
-                  Enrollment closed
-                </span>
-              </div>
-            </div>
-          ) : (
-            <a
-              href={
-                course.id === '2'
+          {/* Enroll */}
+          <a
+            href={
+              course.id === '1'
+                ? 'https://form.jotform.com/260338022159149'
+                : course.id === '2'
                   ? 'https://form.jotform.com/canstudy_consult/ger'
                   : course.id === '3'
                     ? 'https://form.jotform.com/canstudy_consult/irss'
                     : course.id === '4'
                       ? 'https://form.jotform.com/canstudy_consult/celpip'
                       : 'https://form.jotform.com/260338022159149'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center overflow-clip rounded-full border-2 border-transparent bg-accent transition-opacity hover:opacity-90"
-            >
-              <div className="flex items-center rounded-[inherit] px-[38px] pb-[15px] pt-[14px]">
-                <div className="pb-[5.5px] pr-[6px] pt-[3px]">
-                  <FiArrowRight className="scale-y-[-100%] text-[17px] text-white" />
-                </div>
-                <span className="text-center text-[17px] font-semibold leading-[25.5px] text-white">
-                  Enroll now
-                </span>
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center overflow-clip rounded-full border-2 border-transparent bg-accent transition-opacity hover:opacity-90"
+          >
+            <div className="flex items-center rounded-[inherit] px-[38px] pb-[15px] pt-[14px]">
+              <div className="pb-[5.5px] pr-[6px] pt-[3px]">
+                <FiArrowRight className="scale-y-[-100%] text-[17px] text-white" />
               </div>
-            </a>
-          )}
+              <span className="text-center text-[17px] font-semibold leading-[25.5px] text-white">
+                Enroll now
+              </span>
+            </div>
+          </a>
 
           {/* Social Sharing */}
           <div className="flex items-center justify-center gap-4">

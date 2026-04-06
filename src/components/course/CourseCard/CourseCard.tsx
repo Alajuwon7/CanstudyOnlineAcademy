@@ -65,7 +65,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               </div>
               <span className="font-medium">
                 {course.id === '1'
-                  ? 'Mondays - Wednesdays - Thursdays'
+                  ? 'Mondays - Tuesdays - Thursdays'
                   : course.id === '2'
                     ? 'Thursdays'
                     : course.id === '3'
@@ -89,7 +89,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                     ? '11:00 AM - 1:00 PM EST'
                     : course.id === '4'
                       ? '6:30 PM - 8:00 PM EST'
-                      : '6:00 PM - 7:30 PM EST'}
+                      : course.id === '1'
+                        ? '8:00 PM - 9:30 PM EST'
+                        : '6:00 PM - 7:30 PM EST'}
                 </span>
               </div>
               <div className="flex items-center gap-2">
