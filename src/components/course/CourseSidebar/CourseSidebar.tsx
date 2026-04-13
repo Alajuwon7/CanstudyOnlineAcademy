@@ -95,7 +95,7 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
                   : course.id === '2'
                     ? 'March 12th, 2026'
                     : course.id === '3'
-                      ? 'March 10th, 2026'
+                      ? 'April 14th, 2026'
                       : course.id === '4'
                         ? 'March 17 & 18, 2026'
                         : 'Feb. 9th, 2026'}
