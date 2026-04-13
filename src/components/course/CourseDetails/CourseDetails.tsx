@@ -705,6 +705,9 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
     },
   ];
 
+  const tabsForCourse =
+    course.id === '1' ? tabItems.filter((item) => item.id !== 'instructor') : tabItems;
+
   return (
     <div>
       <div className="relative mb-8 aspect-[783/449] w-full overflow-hidden rounded-md">
@@ -789,7 +792,7 @@ export const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
         </div>
       </div>
 
-      <Tab items={tabItems} />
+      <Tab items={tabsForCourse} />
     </div>
   );
 };

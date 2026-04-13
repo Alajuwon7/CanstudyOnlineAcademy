@@ -34,21 +34,23 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             <Badge variant="category" className="w-fit">
               {course.id === '3' ? 'Prof. Development' : course.category}
             </Badge>
-            <div className="flex items-center gap-2">
-              {course.instructor.avatar && (
-                <div className="relative h-6 w-6 flex-shrink-0 overflow-hidden rounded-full">
-                  <Image
-                    src={course.instructor.avatar}
-                    alt={course.instructor.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              )}
-              <span className="truncate text-body-xs text-text-secondary">
-                {course.instructor.name}
-              </span>
-            </div>
+            {course.id !== '1' && (
+              <div className="flex items-center gap-2">
+                {course.instructor.avatar && (
+                  <div className="relative h-6 w-6 flex-shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src={course.instructor.avatar}
+                      alt={course.instructor.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <span className="truncate text-body-xs text-text-secondary">
+                  {course.instructor.name}
+                </span>
+              </div>
+            )}
           </div>
           <h3 className="mb-3 line-clamp-2 min-h-[56px] text-[18px] font-semibold text-black transition-colors group-hover:text-primary md:text-heading-2">
             {course.title}{' '}
