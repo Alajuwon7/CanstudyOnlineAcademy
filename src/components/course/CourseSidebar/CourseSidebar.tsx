@@ -130,11 +130,13 @@ export const CourseSidebar: React.FC<CourseSidebarProps> = ({ course }) => {
               <span className="text-right text-[17px] font-normal leading-[30px] text-text-secondary">
                 {course.id === '1'
                   ? '8:00 PM - 9:30 PM EST'
-                  : course.id === '2' || course.id === '3'
+                  : course.id === '2'
                     ? '11:00 AM - 1:00 PM EST'
-                    : course.id === '4'
-                      ? '6:30 PM - 8:00 PM EST'
-                      : '6:00 PM - 7:30 PM EST'}
+                    : course.id === '3'
+                      ? '6:00 PM - 8:00 PM EST'
+                      : course.id === '4'
+                        ? '6:30 PM - 8:00 PM EST'
+                        : '6:00 PM - 7:30 PM EST'}
               </span>
             </div>
 
